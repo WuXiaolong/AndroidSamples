@@ -15,4 +15,4 @@ Samples
 ===========================
 * [相册拍照](http://wuxiaolong.me/android/2014/11/10/Android-Samples-Photograph/)
 
-  拍照或相册取图片（裁剪和不裁剪），自定义的PopupWindow，详见[Android实战Samples之相册拍照](http://wuxiaolong.me/android/2014/11/10/Android-Samples-Photograph/)
+拍照或相册取图片（裁剪和不裁剪），自定义的PopupWindow，详见[Android实战Samples之相册拍照](http://wuxiaolong.me/android/2014/11/10/Android-Samples-Photograph/)
