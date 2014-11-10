@@ -1,7 +1,9 @@
 package com.xiaomolongstudio.androidsamples;
 
+import android.app.ActionBar;
 import android.app.Activity;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -25,6 +27,10 @@ public class MainActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         ButterKnife.inject(this);
+        ActionBar actionBar = getActionBar();
+        actionBar.setTitle("小尛龙");
+//        actionBar.setDisplayShowHomeEnabled(false);
+//        actionBar.setDisplayHomeAsUpEnabled(false);
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
                 android.R.layout.simple_list_item_1, android.R.id.text1, AppConfig.mActivityName);
         mListView.setAdapter(adapter);
@@ -52,7 +58,10 @@ public class MainActivity extends Activity {
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
-        if (id == R.id.action_settings) {
+        if (id == R.id.github) {
+            Uri uri = Uri.parse("https://github.com/WuXiaolong/AndroidSamples");
+            Intent it = new Intent(Intent.ACTION_VIEW, uri);
+            startActivity(it);
             return true;
         }
         return super.onOptionsItemSelected(item);

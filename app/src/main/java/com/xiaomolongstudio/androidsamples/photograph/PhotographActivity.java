@@ -1,6 +1,5 @@
 package com.xiaomolongstudio.androidsamples.photograph;
 
-import android.app.Activity;
 import android.content.ActivityNotFoundException;
 import android.content.Intent;
 import android.database.Cursor;
@@ -17,6 +16,7 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import com.xiaomolongstudio.androidsamples.BaseActivity;
 import com.xiaomolongstudio.androidsamples.R;
 import com.xiaomolongstudio.androidsamples.utils.AppConfig;
 
@@ -26,7 +26,7 @@ import butterknife.ButterKnife;
 import butterknife.InjectView;
 import butterknife.OnClick;
 
-public class PhotographActivity extends Activity {
+public class PhotographActivity extends BaseActivity {
     @InjectView(R.id.imageViewShow)
     ImageView imageViewShow;
 
@@ -35,6 +35,7 @@ public class PhotographActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_photograph);
         ButterKnife.inject(this);
+        actionBar.setTitle("Photograph");
     }
 
     /**
