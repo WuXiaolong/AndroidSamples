@@ -13,5 +13,6 @@ Android Studio(0.8.9) + Gradle(1.12)
 
 Samples
 ===========================
-持续更新，能学习的知识：
-* [相册拍照](http://wuxiaolong.me/android/2014/11/10/Android-Samples-Photograph/)，拍照或相册取图片（裁剪和不裁剪），自定义的PopupWindow
+* [相册拍照](http://wuxiaolong.me/android/2014/11/10/Android-Samples-Photograph/)
+
+  拍照或相册取图片（裁剪和不裁剪），自定义的PopupWindow，详见[Android实战Samples之相册拍照](http://wuxiaolong.me/android/2014/11/10/Android-Samples-Photograph/)
