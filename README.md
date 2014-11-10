@@ -16,3 +16,9 @@ Samples
 * [相册拍照](http://wuxiaolong.me/android/2014/11/10/Android-Samples-Photograph/)
 
 拍照或相册取图片（裁剪和不裁剪），自定义的PopupWindow，详见[Android实战Samples之相册拍照](http://wuxiaolong.me/android/2014/11/10/Android-Samples-Photograph/)
+
+更多交流
+===========================
+###Android技术交流群
+①群：314447894<a target="_blank" href="http://shang.qq.com/wpa/qunwpa?idkey=d53385cf84362cc7f75360c2d847a573b04ac78deeb567d98f32e13dd95190d9"><img border="0" src="http://pub.idqqimg.com/wpa/images/group.png" alt="剩者为王①群" title="剩者为王①群"></a><br>
+③群：370527306<a target="_blank" href="http://shang.qq.com/wpa/qunwpa?idkey=0a992ba077da4c8325cbfef1c9e81f0443ffb782a0f2135c1a8f7326baac58ac"><img border="0" src="http://pub.idqqimg.com/wpa/images/group.png" alt="剩者为王③群" title="剩者为王③群"></a>
