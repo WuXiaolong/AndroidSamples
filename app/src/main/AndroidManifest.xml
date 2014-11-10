@@ -18,9 +18,6 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".topnews.TopNewsActivity"
-            android:label="@string/title_activity_top_news"></activity>
-        <activity
             android:name=".photograph.PhotographActivity"
             android:label="@string/title_activity_photograph"></activity>
     </application>

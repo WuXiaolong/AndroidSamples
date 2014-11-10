@@ -3,13 +3,12 @@ package com.xiaomolongstudio.androidsamples.utils;
 import android.os.Environment;
 
 import com.xiaomolongstudio.androidsamples.photograph.PhotographActivity;
-import com.xiaomolongstudio.androidsamples.topnews.TopNewsActivity;
 
 /**
  * Created by wxl on 2014/11/4.
  */
 public class AppConfig {
-    public static Class[] mActivities = new Class[]{PhotographActivity.class, TopNewsActivity.class, TopNewsActivity.class
+    public static Class[] mActivities = new Class[]{PhotographActivity.class
     };
     public static String[] mActivityName = {"Photograph"
     };
