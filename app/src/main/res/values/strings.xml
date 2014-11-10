@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">AndroidSamples</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="photograph_cutting">拍照+裁剪</string>
+    <string name="photograph">拍照</string>
+    <string name="album">相册</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_top_news">TopNewsActivity</string>
+    <string name="title_activity_photograph">PhotographActivity</string>
+
+</resources>

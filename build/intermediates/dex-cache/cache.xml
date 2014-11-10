@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<pre-dex-items>
+
+    <item
+        dex="D:\AndroidStudioProjects\AndroidSamples\app\build\intermediates\pre-dexed\debug\butterknife-5.1.1-fb1e7f1f285a6c06c18f9e12820636e781b48931.jar"
+        jar="C:\Users\wxl\.gradle\caches\modules-2\files-2.1\com.jakewharton\butterknife\5.1.1\b3652dfd65ca0bcf18790ff1a1f7624af4cb2bb8\butterknife-5.1.1.jar"
+        jumboMode="false"
+        revision="20.0.0"
+        sha1="b3652dfd65ca0bcf18790ff1a1f7624af4cb2bb8"/>
+
+</pre-dex-items>

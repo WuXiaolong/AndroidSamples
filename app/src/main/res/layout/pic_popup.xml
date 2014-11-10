@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:background="#50000000"
+    android:gravity="center_horizontal"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:id="@+id/pop_layout"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@android:color/white"
+        android:gravity="center_horizontal"
+        android:orientation="vertical" >
+
+        <Button
+            android:id="@+id/btn_user_album"
+            android:layout_width="fill_parent"
+            android:layout_height="44dp"
+            android:layout_marginLeft="22dp"
+            android:layout_marginRight="22dp"
+            android:layout_marginTop="31dp"
+            android:background="@drawable/shape_white"
+            android:text="用户相册"
+          />
+
+        <Button
+            android:id="@+id/btn_photograph"
+            android:layout_width="fill_parent"
+            android:layout_height="44dp"
+            android:layout_marginLeft="22dp"
+            android:layout_marginRight="22dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/shape_white"
+            android:text="拍照"
+           />
+
+        <Button
+            android:id="@+id/btn_cancel"
+            android:layout_width="fill_parent"
+            android:layout_height="44dp"
+            android:layout_marginBottom="30dp"
+            android:layout_marginLeft="22dp"
+            android:layout_marginRight="22dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/shape_gray"
+            android:text="取消"
+           />
+    </LinearLayout>
+
+</RelativeLayout>
