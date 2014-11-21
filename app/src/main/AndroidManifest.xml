@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.xiaomolongstudio.androidsamples">
+    package="com.xiaomolongstudio.androidsamples" >
 
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
     <application
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
-        android:theme="@style/AppTheme">
+        android:theme="@style/AppTheme" >
         <activity
             android:name=".MainActivity"
-            android:label="@string/app_name">
+            android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -19,7 +20,15 @@
         </activity>
         <activity
             android:name=".photograph.PhotographActivity"
-            android:label="@string/title_activity_photograph"></activity>
+            android:label="@string/title_activity_photograph" />
+        <activity
+            android:name=".download.DownloadActivity"
+            android:label="@string/title_activity_download" >
+        </activity>
+        <activity
+            android:name=".download.DownloadingActivity"
+            android:label="@string/title_activity_downloading" >
+        </activity>
     </application>
 
 </manifest>

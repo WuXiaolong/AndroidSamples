@@ -1,0 +1,20 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.xiaomolongstudio.androidsamples.download.DownloadActivity">
+    <item
+        android:id="@+id/action_settings"
+        android:title="@string/action_settings"
+        android:orderInCategory="100"
+        android:showAsAction="never">
+        <item
+            android:id="@+id/action_default_progress"
+            android:title="默认"
+            android:orderInCategory="100"
+            android:showAsAction="never" />
+        <item
+            android:id="@+id/action_custom_progress"
+            android:title="自定义"
+            android:orderInCategory="101"
+            android:showAsAction="never" />
+    </item>
+</menu>

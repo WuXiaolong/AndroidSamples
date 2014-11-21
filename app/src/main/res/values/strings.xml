@@ -10,5 +10,7 @@
     <string name="github">源码地址</string>
     <string name="title_activity_top_news">TopNewsActivity</string>
     <string name="title_activity_photograph">PhotographActivity</string>
+    <string name="title_activity_download">DownloadActivity</string>
+    <string name="title_activity_downloading">DownloadingActivity</string>
 
 </resources>

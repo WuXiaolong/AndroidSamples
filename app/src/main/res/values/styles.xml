@@ -2,8 +2,11 @@
 
     <!-- Base application theme. -->
     <style name="AppTheme" parent="android:Theme.Holo.Light.DarkActionBar">
-    <!--<style name="AppTheme" parent="@android:style/Theme.Holo.Light">-->
+        <!--<style name="AppTheme" parent="@android:style/Theme.Holo.Light">-->
         <!-- Customize your theme here. -->
     </style>
 
+    <style name="NotificationTitle" parent="android:TextAppearance.StatusBar.EventContent.Title" />
+
+    <style name="NotificationContent" parent="android:TextAppearance.StatusBar.EventContent" />
 </resources>
