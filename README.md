@@ -35,7 +35,4 @@ Samples
 ###微博
 [吴小龙同學](http://weibo.com/u/2175011601)
 
-或者微博扫描以下二维码关注作者
-
-<img src="http://wuxiaolong.qiniudn.com/weibo_qrcode.png" /> 
 
