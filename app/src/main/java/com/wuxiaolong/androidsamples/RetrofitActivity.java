@@ -50,14 +50,14 @@ public class RetrofitActivity extends AppCompatActivity {
 
     private void getCarType() {
         mRetrofit = new Retrofit.Builder()
-                .baseUrl("http://shipperdemo.hxunda.com/")
+                .baseUrl("http://wuxiaolong.me")
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
         ApiStores apiStores = mRetrofit.create(ApiStores.class);
         ApiInfo apiInfo = new ApiInfo();
         ApiInfo.ApiInfoBean apiInfoBean = apiInfo.new ApiInfoBean();
-        apiInfoBean.setApiKey("fba78003-fd-df4c8881054e");
-        apiInfoBean.setApiName("shipper-android");
+        apiInfoBean.setApiKey("fba123");
+        apiInfoBean.setApiName("android");
         apiInfo.setApiInfo(apiInfoBean);
         Call<ResponseBody> call = apiStores.getCarType(apiInfo);
         call.enqueue(new Callback<ResponseBody>() {
@@ -96,10 +96,6 @@ public class RetrofitActivity extends AppCompatActivity {
 
     public class ApiInfo {
 
-        /**
-         * apiName : shipper-android
-         * apiKey : fba78003-fd-df4c8881054e
-         */
 
         private ApiInfoBean apiInfo;
 

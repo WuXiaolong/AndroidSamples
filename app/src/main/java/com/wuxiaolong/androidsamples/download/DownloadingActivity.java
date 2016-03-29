@@ -4,8 +4,9 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 
-import com.xiaomolongstudio.androidsamples.BaseActivity;
-import com.xiaomolongstudio.androidsamples.R;
+import com.wuxiaolong.androidsamples.BaseActivity;
+import com.wuxiaolong.androidsamples.R;
+
 
 public class DownloadingActivity extends BaseActivity {
 

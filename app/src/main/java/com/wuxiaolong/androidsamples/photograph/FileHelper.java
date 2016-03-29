@@ -11,7 +11,7 @@ import android.annotation.SuppressLint;
 import android.graphics.Bitmap;
 import android.os.Environment;
 
-import com.xiaomolongstudio.androidsamples.utils.AppUtils;
+import com.wuxiaolong.androidsamples.utils.AppUtils;
 
 import java.io.BufferedInputStream;
 import java.io.BufferedOutputStream;

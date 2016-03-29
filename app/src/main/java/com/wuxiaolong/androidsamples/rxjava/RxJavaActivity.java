@@ -4,7 +4,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 
-import com.wuxiaolong.apksample.R;
+import com.wuxiaolong.androidsamples.R;
 
 import rx.Observable;
 import rx.Observer;

@@ -105,13 +105,13 @@ public class DownloadActivity extends DownloadBaseActivity implements View.OnCli
         contentPendingIntent = PendingIntent.getActivity(this, 0, contentIntent, 0);
         if (isPause) {
             notifyBuilder
-                    .addAction(R.drawable.ic_action_coffee, "暂停", pausePendingIntent);
+                    .addAction(R.mipmap.ic_action_coffee, "暂停", pausePendingIntent);
         } else {
             notifyBuilder
-                    .addAction(R.drawable.ic_action_rocket, "继续", resumePendingIntent);
+                    .addAction(R.mipmap.ic_action_rocket, "继续", resumePendingIntent);
         }
         notifyBuilder
-                .addAction(R.drawable.ic_action_cancel, "停止", cancelPendingIntent)
+                .addAction(R.mipmap.ic_action_cancel, "停止", cancelPendingIntent)
                 .setContentIntent(contentPendingIntent).setWhen(System.currentTimeMillis())// 通知产生的时间，会在通知信息里显示
                 // .setNumber(number)//显示数量
                 .setPriority(Notification.PRIORITY_DEFAULT)// 设置该通知优先级
@@ -121,7 +121,7 @@ public class DownloadActivity extends DownloadBaseActivity implements View.OnCli
                         // 向通知添加声音、闪灯和振动效果的最简单、最一致的方式是使用当前的用户默认设置，使用defaults属性，可以组合：
                         // Notification.DEFAULT_ALL Notification.DEFAULT_SOUND 添加声音 //
                         // requires VIBRATE permission
-                .setSmallIcon(R.drawable.ic_launcher);// .setSmallIcon(android.R.drawable.stat_sys_download)
+                .setSmallIcon(R.mipmap.ic_launcher);// .setSmallIcon(android.R.drawable.stat_sys_download)
     }
 
 
@@ -186,7 +186,7 @@ public class DownloadActivity extends DownloadBaseActivity implements View.OnCli
         RemoteViews mRemoteViews = new RemoteViews(getPackageName(),
                 R.layout.view_custom_progress);
         mRemoteViews.setImageViewResource(R.id.custom_progress_icon,
-                R.drawable.ic_launcher);
+                R.mipmap.ic_launcher);
         mRemoteViews.setTextViewText(R.id.tv_custom_progress_title, "小尛龙");
         mRemoteViews.setTextViewText(R.id.tv_custom_progress_status, status);
         if (progress >= 100 || downloadThread == null) {
@@ -221,7 +221,7 @@ public class DownloadActivity extends DownloadBaseActivity implements View.OnCli
                         // 向通知添加声音、闪灯和振动效果的最简单、最一致的方式是使用当前的用户默认设置，使用defaults属性，可以组合：
                         // Notification.DEFAULT_ALL Notification.DEFAULT_SOUND 添加声音 //
                         // requires VIBRATE permission
-                .setSmallIcon(R.drawable.ic_launcher);// .setSmallIcon(android.R.drawable.stat_sys_download)
+                .setSmallIcon(R.mipmap.ic_launcher);// .setSmallIcon(android.R.drawable.stat_sys_download)
 
         Notification notify = notifyBuilder.build();
         notify.flags = Notification.FLAG_ONGOING_EVENT;
