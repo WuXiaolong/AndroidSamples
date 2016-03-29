@@ -1,4 +1,4 @@
-package com.xiaomolongstudio.androidsamples;
+package com.wuxiaolong.androidsamples;
 
 import android.app.ActionBar;
 import android.app.Activity;

@@ -1,11 +1,12 @@
-package com.xiaomolongstudio.androidsamples.download;
+package com.wuxiaolong.androidsamples.download;
 
 import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.content.Intent;
 import android.os.Bundle;
 
-import com.xiaomolongstudio.androidsamples.BaseActivity;
+import com.wuxiaolong.androidsamples.BaseActivity;
+
 
 public class DownloadBaseActivity extends BaseActivity {
     /**

@@ -1,4 +1,4 @@
-package com.xiaomolongstudio.androidsamples.photograph;
+package com.wuxiaolong.androidsamples.photograph;
 
 import android.content.ActivityNotFoundException;
 import android.content.Intent;
@@ -16,9 +16,9 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.Toast;
 
-import com.xiaomolongstudio.androidsamples.BaseActivity;
-import com.xiaomolongstudio.androidsamples.R;
-import com.xiaomolongstudio.androidsamples.utils.AppConfig;
+import com.wuxiaolong.androidsamples.BaseActivity;
+import com.wuxiaolong.androidsamples.R;
+import com.wuxiaolong.androidsamples.utils.AppConfig;
 
 import java.io.File;
 
@@ -88,7 +88,7 @@ public class PhotographActivity extends BaseActivity {
     @OnClick(R.id.photograph_cutting)
     void picPopupItemsOnClick() {
         // 实例化SelectPicPopupWindow
-        picPopupWindow = new PicPopupWindow(PhotographActivity.this,
+        picPopupWindow = new com.wuxiaolong.androidsamples.photograph.PicPopupWindow(PhotographActivity.this,
                 picPopupItemsOnClick);
         // 显示窗口
         picPopupWindow.showAtLocation(

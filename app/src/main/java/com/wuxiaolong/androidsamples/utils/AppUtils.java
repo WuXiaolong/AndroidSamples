@@ -1,4 +1,4 @@
-package com.xiaomolongstudio.androidsamples.utils;
+package com.wuxiaolong.androidsamples.utils;
 
 import java.io.Closeable;
 import java.io.IOException;

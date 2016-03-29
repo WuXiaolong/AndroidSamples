@@ -1,4 +1,4 @@
-package com.xiaomolongstudio.androidsamples.download;
+package com.wuxiaolong.androidsamples.download;
 
 import android.app.Notification;
 import android.app.PendingIntent;
@@ -14,7 +14,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.RemoteViews;
 
-import com.xiaomolongstudio.androidsamples.R;
+import com.wuxiaolong.androidsamples.R;
 
 import java.util.Random;
 

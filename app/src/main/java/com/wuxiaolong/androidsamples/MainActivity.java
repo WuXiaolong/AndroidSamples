@@ -1,4 +1,4 @@
-package com.xiaomolongstudio.androidsamples;
+package com.wuxiaolong.androidsamples;
 
 import android.app.ActionBar;
 import android.app.Activity;
@@ -12,7 +12,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
-import com.xiaomolongstudio.androidsamples.utils.AppConfig;
+import com.wuxiaolong.androidsamples.utils.AppConfig;
 
 import butterknife.ButterKnife;
 import butterknife.InjectView;

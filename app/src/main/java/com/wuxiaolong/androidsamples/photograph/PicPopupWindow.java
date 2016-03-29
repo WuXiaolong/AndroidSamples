@@ -1,4 +1,4 @@
-package com.xiaomolongstudio.androidsamples.photograph;
+package com.wuxiaolong.androidsamples.photograph;
 
 import android.app.Activity;
 import android.content.Context;
@@ -12,7 +12,7 @@ import android.view.ViewGroup.LayoutParams;
 import android.widget.Button;
 import android.widget.PopupWindow;
 
-import com.xiaomolongstudio.androidsamples.R;
+import com.wuxiaolong.androidsamples.R;
 
 
 public class PicPopupWindow extends PopupWindow {

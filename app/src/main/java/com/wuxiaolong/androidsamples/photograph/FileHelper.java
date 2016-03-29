@@ -5,7 +5,7 @@
  * 修改人：ze.chen
  * 修改时间：2013-6-4 上午9:36:46
  */
-package com.xiaomolongstudio.androidsamples.photograph;
+package com.wuxiaolong.androidsamples.photograph;
 
 import android.annotation.SuppressLint;
 import android.graphics.Bitmap;

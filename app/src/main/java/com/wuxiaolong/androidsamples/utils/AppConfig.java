@@ -1,9 +1,10 @@
-package com.xiaomolongstudio.androidsamples.utils;
+package com.wuxiaolong.androidsamples.utils;
 
 import android.os.Environment;
 
-import com.xiaomolongstudio.androidsamples.download.DownloadActivity;
-import com.xiaomolongstudio.androidsamples.photograph.PhotographActivity;
+import com.wuxiaolong.androidsamples.download.DownloadActivity;
+import com.wuxiaolong.androidsamples.photograph.PhotographActivity;
+
 
 /**
  * Created by wxl on 2014/11/4.
