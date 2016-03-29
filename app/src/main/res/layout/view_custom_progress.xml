@@ -11,7 +11,7 @@
         android:layout_alignParentLeft="true"
         android:layout_margin="5dip"
         android:padding="5dip"
-        android:src="@drawable/ic_launcher" />
+        android:src="@mipmap/ic_launcher" />
     <ImageView
         android:id="@+id/close"
         android:layout_width="30dip"
@@ -19,7 +19,7 @@
         android:layout_alignParentRight="true"
         android:layout_margin="5dip"
         android:padding="5dip"
-        android:src="@drawable/ic_action_cancel" />
+        android:src="@mipmap/ic_action_cancel" />
 
     <RelativeLayout
         android:layout_width="match_parent"
