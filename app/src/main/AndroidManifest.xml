@@ -39,7 +39,7 @@
 
         <service android:name=".service.HelloService" />
 
-        <receiver android:name=".service.HelloBroadcastReceiver">
+        <receiver android:name=".BaseActivity$HelloBroadcastReceiver">
             <intent-filter android:priority="100">
                 <action android:name="com.wuxiaolong.apksample.HelloBroadcastReceiver" />
             </intent-filter>

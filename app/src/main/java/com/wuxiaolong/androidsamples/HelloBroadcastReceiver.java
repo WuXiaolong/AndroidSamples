@@ -1,4 +1,4 @@
-package com.wuxiaolong.androidsamples.service;
+package com.wuxiaolong.androidsamples;
 
 import android.content.BroadcastReceiver;
 import android.content.Context;
