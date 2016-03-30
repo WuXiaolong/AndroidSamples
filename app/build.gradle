@@ -13,11 +13,11 @@ android {
     }
     buildTypes {
         release {
-            minifyEnabled false//是否启动混淆
+            minifyEnabled false//锟角凤拷锟斤拷锟斤拷锟斤拷锟斤拷
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
-    compileOptions {//可以进行 Java 的版本配置，以便使用对应版本的一些新特性,让IDE使用JAVA8语法解析
+    compileOptions {//锟斤拷锟皆斤拷锟斤拷 Java 锟侥版本锟斤拷锟矫ｏ拷锟皆憋拷使锟矫讹拷应锟芥本锟斤拷一些锟斤拷锟斤拷锟斤拷,锟斤拷IDE使锟斤拷JAVA8锟斤法锟斤拷锟斤拷
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
