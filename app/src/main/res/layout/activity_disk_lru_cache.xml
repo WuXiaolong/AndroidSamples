@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".disklrucache.DiskLruCacheActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/cacheSize"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <Button
+            android:id="@+id/cacheImageView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="onCache"
+            android:text="缓存" />
+
+        <Button
+            android:id="@+id/showCacheImageView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="onCache"
+            android:text="显示图片" />
+
+        <Button
+            android:id="@+id/deleteCacheImageView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="onCache"
+            android:text="删除缓存" />
+
+
+        <Button
+            android:id="@+id/deleteAllCacheImageView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="onCache"
+            android:text="删除全部缓存" />
+    </LinearLayout>
+</ScrollView>

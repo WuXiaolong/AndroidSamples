@@ -12,6 +12,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.widget.ImageView;
 
 import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.bumptech.glide.load.engine.bitmap_recycle.BitmapPool;
 import com.bumptech.glide.load.resource.bitmap.BitmapTransformation;
 import com.wuxiaolong.androidsamples.R;
@@ -33,7 +34,7 @@ public class GlideActivity extends AppCompatActivity {
                 .placeholder(R.mipmap.ic_launcher) // can also be a drawable
                 .error(R.mipmap.ic_launcher) // will be displayed if the image cannot be loaded
 //                .skipMemoryCache(true)
-//                .diskCacheStrategy(DiskCacheStrategy.NONE)
+                .diskCacheStrategy(DiskCacheStrategy.NONE)
 //                .thumbnail(0.1f)
                 .transform(new BlurTransformation(GlideActivity.this))
                 .into(imageView);
