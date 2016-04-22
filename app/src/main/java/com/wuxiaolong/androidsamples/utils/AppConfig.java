@@ -2,7 +2,7 @@ package com.wuxiaolong.androidsamples.utils;
 
 import android.os.Environment;
 
-import com.wuxiaolong.androidsamples.download.DownloadActivity;
+import com.wuxiaolong.androidsamples.downloadnotify.DownloadActivity;
 import com.wuxiaolong.androidsamples.photograph.PhotographActivity;
 
 

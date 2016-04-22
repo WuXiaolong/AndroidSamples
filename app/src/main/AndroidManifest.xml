@@ -17,7 +17,7 @@
             android:name=".photograph.PhotographActivity"
             android:label="@string/title_activity_photograph" />
         <activity
-            android:name=".download.DownloadActivity"
+            android:name=".downloadnotify.DownloadActivity"
             android:label="@string/title_activity_download" />
         <activity
             android:name=".xscrollview.XScrollViewActivity"
@@ -76,10 +76,15 @@
             <!-- </intent-filter> -->
         </activity>
         <activity android:name=".rxjava.RxBusActivity" />
-        <activity android:name=".OkHttpActivity"></activity>
-        <activity android:name=".CustomInputActivity">
-        </activity>
-        <activity android:name=".disklrucache.DiskLruCacheActivity">
+        <activity android:name=".OkHttpActivity" />
+        <activity android:name=".CustomInputActivity" />
+        <activity android:name=".disklrucache.DiskLruCacheActivity" />
+        <activity
+            android:name=".videoplay.VideoPlayViewActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:screenOrientation="sensor"
+            android:theme="@android:style/Theme.Light.NoTitleBar.Fullscreen">
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

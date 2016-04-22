@@ -1,4 +1,4 @@
-package com.wuxiaolong.androidsamples.download;
+package com.wuxiaolong.androidsamples.downloadnotify;
 
 import android.os.Bundle;
 import android.view.Menu;

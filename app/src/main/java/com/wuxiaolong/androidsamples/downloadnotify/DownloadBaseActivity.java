@@ -1,4 +1,4 @@
-package com.wuxiaolong.androidsamples.download;
+package com.wuxiaolong.androidsamples.downloadnotify;
 
 import android.app.NotificationManager;
 import android.app.PendingIntent;
