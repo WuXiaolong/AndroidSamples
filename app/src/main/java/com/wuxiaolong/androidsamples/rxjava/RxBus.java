@@ -24,7 +24,8 @@ public class RxBus {
     }
 
     public void post(Object o) {
-        mRxBusObserverable.onNext(o);
+        if (hasObservers())
+            mRxBusObserverable.onNext(o);
     }
 
     public Observable<Object> toObserverable() {

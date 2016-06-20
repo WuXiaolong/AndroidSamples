@@ -1,10 +1,13 @@
 <resources>
 
     <!-- Base application theme. -->
-    <style name="AppTheme" parent="android:Theme.Holo.Light.DarkActionBar">
-        <!--<style name="AppTheme" parent="@android:style/Theme.Holo.Light">-->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <!-- Customize your theme here. -->
+        <item name="android:textColorPrimary">@android:color/white</item>
+        <item name="actionMenuTextColor">@android:color/white</item>
+        <item name="colorControlNormal">@color/white</item>
     </style>
+
 
     <style name="NotificationTitle" parent="android:TextAppearance.StatusBar.EventContent.Title" />
 
