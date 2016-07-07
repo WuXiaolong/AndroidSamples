@@ -66,16 +66,8 @@
             android:name=".LoginActivity"
             android:label="@string/title_activity_login" />
         <activity android:name=".RetrofitActivity" />
-        <activity android:name=".glide.GlideActivity">
-        </activity>
-        <activity android:name=".rxjava.RxBusActivity">
-
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+        <activity android:name=".glide.GlideActivity"/>
+        <activity android:name=".rxjava.RxBusActivity"/>
         <activity android:name=".OkHttpActivity" />
         <activity android:name=".CustomInputActivity" />
         <activity android:name=".disklrucache.DiskLruCacheActivity" />
@@ -83,8 +75,15 @@
             android:name=".videoplay.VideoPlayViewActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:screenOrientation="sensor"
-            android:theme="@android:style/Theme.Light.NoTitleBar.Fullscreen"/>
-        <activity android:name=".toast.ToastActivity"/>
+            android:theme="@android:style/Theme.Light.NoTitleBar.Fullscreen" />
+        <activity android:name=".toast.ToastActivity" />
+        <activity android:name=".marqueetextview.MarqueeTextViewActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>
