@@ -66,8 +66,8 @@
             android:name=".LoginActivity"
             android:label="@string/title_activity_login" />
         <activity android:name=".RetrofitActivity" />
-        <activity android:name=".glide.GlideActivity"/>
-        <activity android:name=".rxjava.RxBusActivity"/>
+        <activity android:name=".glide.GlideActivity" />
+        <activity android:name=".rxjava.RxBusActivity" />
         <activity android:name=".OkHttpActivity" />
         <activity android:name=".CustomInputActivity" />
         <activity android:name=".disklrucache.DiskLruCacheActivity" />
@@ -77,7 +77,8 @@
             android:screenOrientation="sensor"
             android:theme="@android:style/Theme.Light.NoTitleBar.Fullscreen" />
         <activity android:name=".toast.ToastActivity" />
-        <activity android:name=".marqueetextview.MarqueeTextViewActivity">
+        <activity android:name=".marqueetextview.MarqueeTextViewActivity" />
+        <activity android:name=".cardashboard.CarDashboardActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
