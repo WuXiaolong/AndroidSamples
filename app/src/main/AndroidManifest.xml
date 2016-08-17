@@ -54,7 +54,13 @@
         <activity
             android:name=".StartModeActivity"
             android:launchMode="standard" />
-        <activity android:name=".paintcanvas.PaintCanvasActivity" />
+        <activity android:name=".paintcanvas.PaintCanvasActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity android:name=".ProgressBarActivity" />
         <activity
             android:name=".motionevent.MotionEventActivity"
@@ -79,11 +85,11 @@
         <activity android:name=".toast.ToastActivity" />
         <activity android:name=".marqueetextview.MarqueeTextViewActivity" />
         <activity android:name=".cardashboard.CarDashboardActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+            <!--<intent-filter>-->
+            <!--<action android:name="android.intent.action.MAIN" />-->
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+            <!--<category android:name="android.intent.category.LAUNCHER" />-->
+            <!--</intent-filter>-->
         </activity>
     </application>
 

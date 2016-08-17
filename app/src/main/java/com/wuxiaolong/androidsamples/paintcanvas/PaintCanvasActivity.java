@@ -18,7 +18,17 @@ public class PaintCanvasActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_paint_canvas);
-//        initRoundRectImage();
+        colorFilterTest();
+    }
+    private void colorFilterTest() {
+        Paint paint = new Paint();
+        paint.setAntiAlias(true);
+        Bitmap bitmap = BitmapFactory.decodeResource(getResources(), R.mipmap.logo);
+        Bitmap outBitmap = Bitmap.createBitmap(bitmap.getWidth(), bitmap.getHeight(), Bitmap.Config.ARGB_8888);
+        Canvas canvas = new Canvas(outBitmap);
+//        RectF rectF = new RectF(0, 0, bitmap.getWidth(), bitmap.getHeight());
+//        canvas.drawRoundRect(rectF, 80, 80, paint);
+        canvas.drawBitmap(outBitmap, 0, 0, paint);
     }
 
     private void initRoundRectImage() {
@@ -27,7 +37,7 @@ public class PaintCanvasActivity extends AppCompatActivity {
         Canvas canvas = new Canvas(outBitmap);
         Paint paint = new Paint();
         paint.setAntiAlias(true);
-        RectF rectF=new RectF(0, 0, bitmap.getWidth(), bitmap.getHeight());
+        RectF rectF = new RectF(0, 0, bitmap.getWidth(), bitmap.getHeight());
         canvas.drawRoundRect(rectF, 80, 80, paint);
         paint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.SRC_IN));
         canvas.drawBitmap(bitmap, 0, 0, paint);
