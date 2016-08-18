@@ -5,7 +5,6 @@ import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
-import android.graphics.ColorMatrix;
 import android.graphics.ComposePathEffect;
 import android.graphics.CornerPathEffect;
 import android.graphics.DashPathEffect;
@@ -14,12 +13,10 @@ import android.graphics.Paint;
 import android.graphics.Path;
 import android.graphics.PathDashPathEffect;
 import android.graphics.PathEffect;
-import android.graphics.PorterDuff;
 import android.graphics.PorterDuffXfermode;
 import android.graphics.RectF;
 import android.graphics.Shader;
 import android.graphics.SumPathEffect;
-import android.graphics.Typeface;
 import android.os.Build;
 import android.util.AttributeSet;
 import android.view.View;
@@ -41,7 +38,7 @@ public class PaintCanvas extends View {
     // 路径对象
     private Path mPath;
     private PathEffect[] pathEffects = new PathEffect[7];
-    private float mPhase=5;
+    private float mPhase = 5;
 
     public PaintCanvas(Context context) {
         super(context);
@@ -86,25 +83,54 @@ public class PaintCanvas extends View {
         //mRectF = new RectF(0, 0, 600, 400);
         mPaint = new Paint();
         mPaint.setStyle(Paint.Style.STROKE);
-        mPaint.setStrokeWidth(5);
+        mPaint.setStrokeWidth(10);
         mPaint.setAntiAlias(true);
-        mPaint.setTypeface(Typeface.SANS_SERIF);
-        mPaint.setDither(true);
-        initPath();
+        mPaint.setTextSize(60);
+        //mPaint.setColor(Color.WHITE);
+        //mPaint.setShadowLayer(10, 100, 100, Color.BLUE);
+        //mPaint.setStrikeThruText(true);
+        mPaint.setStrokeCap(Paint.Cap.ROUND);
+        mPaint.setStrokeJoin(Paint.Join.ROUND);
+        mPaint.setStrokeMiter(20f);
+        mPaint.setSubpixelText(true);
+        mPaint.setTextAlign(Paint.Align.LEFT);
+        mPaint.setTextScaleX(1.1f);
+        mPaint.setTextSkewX(-1f);
+        mPaint.setFilterBitmap(true);
+        mPaint.setHinting(Paint.HINTING_ON);
+        //mPaint.setLinearText(false);
+        // 设置画笔模糊阴影效果,参数1：模糊延伸半径，必须>0；
+        // 参数2：有四种枚举
+        // NORMAL，同时绘制图形本身内容+内阴影+外阴影,正常阴影效果
+        // INNER，绘制图形内容本身+内阴影，不绘制外阴影
+        // OUTER，不绘制图形内容以及内阴影，只绘制外阴影
+        // SOLID，只绘制外阴影和图形内容本身，不绘制内阴影
+        // BlurMaskFilter绘制的Bitmap基本完全不受影响
+        //mPaint.setMaskFilter(new BlurMaskFilter(20f, BlurMaskFilter.Blur.SOLID));
+
+        //Paint的setMaskFilter不被GPU支持,为了确保画笔的setMaskFilter能供起效，我们需要禁用掉GPU硬件加速
+        //if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB) {
+        //    //View从API Level 11才加入setLayerType方法
+        //    //设置myView以软件渲染模式绘图
+        //    this.setLayerType(View.LAYER_TYPE_SOFTWARE, null);
+        //}
+        //设置浮雕滤镜效果，参数1：光源指定方向；参数2:环境光亮度，取值0-1,值越小越暗；参数3：镜面高光反射系数，值越小反射越强；参数4：模糊延伸半径
+        //mPaint.setMaskFilter(new EmbossMaskFilter(new float[]{1, 1, 1}, 0.4f, 8f, 3f));
+        //initPath();
         // 生成色彩矩阵
-        ColorMatrix colorMatrix = new ColorMatrix(new float[]{
-                0.5F, 0, 0, 0, 0,
-                0, 0.5F, 0, 0, 0,
-                0, 0, 0.5F, 0, 0,
-                0, 0, 0, 1, 0,
-        });
+        //ColorMatrix colorMatrix = new ColorMatrix(new float[]{
+        //        0.5F, 0, 0, 0, 0,
+        //        0, 0.5F, 0, 0, 0,
+        //        0, 0, 0.5F, 0, 0,
+        //        0, 0, 0, 1, 0,
+        //});
         //mPaint.setColorFilter(new ColorMatrixColorFilter(colorMatrix));
         // 设置颜色过滤,去掉绿色
         //mPaint.setColorFilter(new LightingColorFilter(0xFFFF00FF, 0x00000000));
         // 设置颜色过滤,Color的值设为红色，模式PorterDuff.Mode.DARKEN变暗
         //mPaint.setColorFilter(new PorterDuffColorFilter(Color.RED, PorterDuff.Mode.DARKEN));
         // 实例化混合模式
-        porterDuffXfermode = new PorterDuffXfermode(PorterDuff.Mode.SRC);
+        //porterDuffXfermode = new PorterDuffXfermode(PorterDuff.Mode.SRC);
 
     }
 
@@ -143,7 +169,7 @@ public class PaintCanvas extends View {
         //新建一个layer,放置在canvas默认layer的上部，产生的layer初始时是完全透明的
         //int layerId = canvas.saveLayer(0, 0, canvasWidth, canvasHeight, null, Canvas.ALL_SAVE_FLAG);
         //dst是先画的图形
-        //canvas.drawBitmap(mBitmap, 0, 0, mPaint);
+        canvas.drawBitmap(mBitmap, 0, 0, mPaint);
         //设置混合模式
         //mPaint.setXfermode(porterDuffXfermode);
         //src是后画的图形
@@ -160,13 +186,17 @@ public class PaintCanvas extends View {
          /*
          * 绘制路径
          */
-        for (int i = 0; i < pathEffects.length; i++) {
-            mPaint.setPathEffect(pathEffects[i]);
-            canvas.drawPath(mPath, mPaint);
+        //for (int i = 0; i < pathEffects.length; i++) {
+        //    mPaint.setPathEffect(pathEffects[i]);
+        //    canvas.drawPath(mPath, mPaint);
+        //
+        //    // 每绘制一条将画布向下平移250个像素
+        //    canvas.translate(0, 250);
+        //}
 
-            // 每绘制一条将画布向下平移250个像素
-            canvas.translate(0, 250);
-        }
+        canvas.drawText("微信公众号：吴小龙同学", 20, 500, mPaint);
+
+        //canvas.drawRect(100, 100, 500, 500, mPaint);
     }
 
 }
