@@ -27,7 +27,7 @@ import com.wuxiaolong.androidsamples.R;
  * Created by Administrator
  * on 2015/12/6 0006.
  */
-public class PaintCanvas extends View {
+public class PaintView extends View {
     private Paint mPaint;
     // 图形混合模式
     private PorterDuffXfermode porterDuffXfermode;
@@ -40,26 +40,26 @@ public class PaintCanvas extends View {
     private PathEffect[] pathEffects = new PathEffect[7];
     private float mPhase = 5;
 
-    public PaintCanvas(Context context) {
+    public PaintView(Context context) {
         super(context);
         this.mContext = context;
         init();
     }
 
-    public PaintCanvas(Context context, AttributeSet attrs) {
+    public PaintView(Context context, AttributeSet attrs) {
         super(context, attrs);
         this.mContext = context;
         init();
     }
 
-    public PaintCanvas(Context context, AttributeSet attrs, int defStyleAttr) {
+    public PaintView(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
         this.mContext = context;
         init();
     }
 
     @TargetApi(Build.VERSION_CODES.LOLLIPOP)
-    public PaintCanvas(Context context, AttributeSet attrs, int defStyleAttr, int defStyleRes) {
+    public PaintView(Context context, AttributeSet attrs, int defStyleAttr, int defStyleRes) {
         super(context, attrs, defStyleAttr, defStyleRes);
         this.mContext = context;
         init();

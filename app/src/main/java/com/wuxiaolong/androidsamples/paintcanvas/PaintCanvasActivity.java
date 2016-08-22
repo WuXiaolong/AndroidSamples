@@ -18,7 +18,6 @@ public class PaintCanvasActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_paint_canvas);
-        colorFilterTest();
     }
     private void colorFilterTest() {
         Paint paint = new Paint();
