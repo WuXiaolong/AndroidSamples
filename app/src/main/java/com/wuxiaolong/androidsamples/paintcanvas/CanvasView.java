@@ -4,8 +4,9 @@ import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
+import android.graphics.Color;
 import android.graphics.Paint;
-import android.graphics.Path;
+import android.graphics.Rect;
 import android.util.AttributeSet;
 import android.view.View;
 
@@ -32,7 +33,9 @@ public class CanvasView extends View {
     private void init() {
         mBitmap = BitmapFactory.decodeResource(getResources(), R.mipmap.logo);
         mPaint = new Paint();
-        mPaint.setStyle(Paint.Style.STROKE);
+        mPaint.setStyle(Paint.Style.FILL);
+        mPaint.setColor(Color.WHITE);
+        mPaint.setStrokeWidth(2);
     }
 
     @Override
@@ -93,15 +96,69 @@ public class CanvasView extends View {
         //canvas.drawText(text, 2, text.length(), 100, 100, mPaint);
         //canvas.drawText("我的微信公众号：吴小龙同学", 100, 400, mPaint);
 
-        Path path = new Path();
-        path.addCircle(500, 500, 200, Path.Direction.CW);
-        mPaint.setTextSize(50);
+        //Path path = new Path();
+        //path.addCircle(500, 500, 200, Path.Direction.CW);
+        //mPaint.setTextSize(50);
         // 绘制路径
-        canvas.drawPath(path, mPaint);
+        //canvas.drawPath(path, mPaint);
 
-        String text = "我的微信公众号：吴小龙同学";
-        canvas.drawTextOnPath(text, path, -10f, 0f, mPaint);
+        //String text = "我的微信公众号：吴小龙同学";
+        //canvas.drawTextOnPath(text, path, 100f, 0f, mPaint);
+
+        //Path path = new Path();
+        //RectF arcRecF = new RectF(0, 0, 500, 500);
+        //path.addArc(arcRecF, 0, 135);
+        //canvas.clipPath(path);
+        //canvas.drawColor(Color.RED);
+
+        //canvas.clipRect(100, 100, 400, 500);
+        //canvas.drawColor(Color.RED);
+
+        // 填充颜色
+//        canvas.drawColor(Color.BLUE);
+//        canvas.save();
+//
+//        canvas.clipRect(100, 100, 400, 500);
+//
+//        canvas.clipRect(200, 200, 600, 600, Region.Op.XOR);
+//        canvas.drawColor(Color.RED);
+//        canvas.restore();
+//        // 绘制和裁剪一样的矩形便于观察
+//        canvas.drawRect(100, 100, 400, 500, mPaint);
+//        canvas.drawRect(200, 200, 600, 600, mPaint);
 
 
+//        canvas.drawColor(Color.BLUE);
+//        mPaint.setColor(Color.GREEN);
+//        canvas.drawRect(0, 0, 400, 500, mPaint);
+//        // 保存画布状态
+//        canvas.save();
+//
+//        canvas.scale(0.5f, 0.5f);
+//        mPaint.setColor(Color.RED);
+//        canvas.drawRect(0, 0, 400, 500, mPaint);
+//
+//        canvas.restore();
+//
+//        canvas.scale(0.5f, 0.5f, 200, 200);
+//        mPaint.setColor(Color.WHITE);
+//        canvas.drawRect(0, 0, 400, 500, mPaint);
+//        canvas.drawColor(Color.GREEN);
+//        canvas.drawRect(new Rect(0, 0, 400, 400), mPaint);
+//        // x 方向上倾斜45 度
+//        canvas.skew(1, 0);
+        // y 方向上倾斜45 度
+//        canvas.skew(1, 0);
+//        canvas.drawColor(Color.BLUE);
+//        canvas.drawRect(new Rect(0, 0, 400, 400), mPaint);
+
+//        canvas.drawColor(Color.BLUE);
+//        canvas.drawRect(new Rect(0, 0, 400, 400), mPaint);
+//        mPaint.setColor(Color.YELLOW);
+//        canvas.rotate(45,400,400);
+//        canvas.drawRect(new Rect(0, 0, 400, 400), mPaint);
+        canvas.drawColor(Color.BLUE);
+        canvas.translate(100, 100);
+        canvas.drawRect(new Rect(0, 0, 400, 400), mPaint);
     }
 }
