@@ -21,10 +21,11 @@ public class RetrofitActivity extends AppCompatActivity {
     Retrofit mRetrofit;
 
     @Override
+
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_retrofit);
-        getCarType();
+        getWeather();
     }
 
     private void getWeather() {
