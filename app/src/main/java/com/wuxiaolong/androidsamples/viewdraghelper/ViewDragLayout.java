@@ -14,7 +14,8 @@ import android.view.ViewGroup;
 import android.widget.LinearLayout;
 
 /**
- * Created by WuXiaolong on 2015/12/4.
+ * Created by WuXiaolong
+ * on 2015/12/4.
  */
 public class ViewDragLayout extends LinearLayout {
     /**
@@ -133,6 +134,21 @@ public class ViewDragLayout extends LinearLayout {
         mViewDragHelper = ViewDragHelper.create(this, 1.0f, new DragHelperCallback());
         //手势操作，第二参数什么意思看下面
         mGestureDetectorCompat = new GestureDetectorCompat(getContext(), new XScrollDetector());
+    }
+
+    /**
+     * 手势监听回调,
+     * SimpleOnGestureListener为了不用重写那么多监听的帮助类
+     */
+    private class XScrollDetector extends GestureDetector.SimpleOnGestureListener {
+
+        @Override
+        public boolean onScroll(MotionEvent e1, MotionEvent e2,
+                                float distanceX, float distanceY) {
+            //判断是否是滑动的x距离>y距离
+            return Math.abs(distanceY) <= Math.abs(distanceX);
+        }
+
     }
 
     class DragHelperCallback extends ViewDragHelper.Callback {
@@ -268,20 +284,6 @@ public class ViewDragLayout extends LinearLayout {
         return isOpen;
     }
 
-    /**
-     * 手势监听回调,
-     * SimpleOnGestureListener为了不用重写那么多监听的帮助类
-     */
-    private class XScrollDetector extends GestureDetector.SimpleOnGestureListener {
-
-        @Override
-        public boolean onScroll(MotionEvent e1, MotionEvent e2,
-                                float distanceX, float distanceY) {
-            //判断是否是滑动的x距离>y距离
-            return Math.abs(distanceY) <= Math.abs(distanceX);
-        }
-
-    }
 
     /**
      * 事件拦截下来,相当于把自定义控件的事件交给ViewDragHelper去处理
