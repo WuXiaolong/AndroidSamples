@@ -187,7 +187,7 @@ public class ViewDragLayout extends LinearLayout {
          */
         @Override
         public int clampViewPositionHorizontal(View child, int left, int dx) {
-//            Log.d("wxl", "clampViewPositionHorizontal left=" + left);
+            //Log.d("wxl", "clampViewPositionHorizontal left=" + left);
             if (child == mContentLayout) {
                 int newLeft = Math.min(
                         Math.max((-getPaddingLeft() - mBehindLayoutWidth), left), 0);
@@ -213,7 +213,7 @@ public class ViewDragLayout extends LinearLayout {
         @Override
         public void onViewPositionChanged(
                 View changedView, int left, int top, int dx, int dy) {
-//            Log.d("wxl", "onViewPositionChanged left=" + left);
+            //Log.d("wxl", "onViewPositionChanged left=" + left);
             mViewDragRange = left;
             float percent = Math.abs((float) left / (float) mContentLayoutWidth);
             if (null != mViewDragListener)
