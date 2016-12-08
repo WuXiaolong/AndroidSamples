@@ -39,5 +39,25 @@
     <string name="permission_rationale">"Contacts permissions are needed for providing email
         completions."
     </string>
-
+    <array name="dummy_items">
+        <item>test1</item>
+        <item>test2</item>
+        <item>test3</item>
+        <item>test4</item>
+        <item>test5</item>
+        <item>test6</item>
+        <item>test7</item>
+        <item>test8</item>
+        <item>test9</item>
+        <item>test10</item>
+        <item>test11</item>
+        <item>test12</item>
+        <item>test13</item>
+        <item>test14</item>
+        <item>test15</item>
+        <item>test16</item>
+        <item>test17</item>
+        <item>test18</item>
+        <item>test19</item>
+    </array>
 </resources>
