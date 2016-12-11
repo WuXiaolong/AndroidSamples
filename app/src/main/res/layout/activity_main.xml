@@ -1,16 +1,17 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".MainActivity">
 
-    <ListView
-        android:id="@+id/mListView"
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        android:background="@android:color/white"
-        android:choiceMode="singleChoice"
-        android:drawSelectorOnTop="false"></ListView>
+    <include layout="@layout/toolbar"/>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recycleerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
 
 
-</RelativeLayout>
+</LinearLayout>

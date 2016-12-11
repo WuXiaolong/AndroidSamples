@@ -1,8 +1,11 @@
-package com.wuxiaolong.androidsamples;
+package com.wuxiaolong.androidsamples.retrofit;
 
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+import android.widget.Toast;
+
+import com.wuxiaolong.androidsamples.BaseActivity;
+import com.wuxiaolong.androidsamples.R;
 
 import java.io.IOException;
 
@@ -17,7 +20,7 @@ import retrofit2.http.GET;
 import retrofit2.http.POST;
 import retrofit2.http.Path;
 
-public class RetrofitActivity extends AppCompatActivity {
+public class RetrofitActivity extends BaseActivity {
     Retrofit mRetrofit;
 
     @Override
@@ -39,6 +42,7 @@ public class RetrofitActivity extends AppCompatActivity {
             @Override
             public void onResponse(Call<WeatherJson> call, Response<WeatherJson> response) {
                 Log.i("wxl", "getCity=" + response.body().getWeatherinfo().getCity());
+                Toast.makeText(context, response.body().getWeatherinfo().getCity(), Toast.LENGTH_LONG).show();
             }
 
             @Override

@@ -35,7 +35,6 @@ public class PhotographActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_photograph);
         ButterKnife.inject(this);
-        actionBar.setTitle("拍照+相册");
     }
 
     /**

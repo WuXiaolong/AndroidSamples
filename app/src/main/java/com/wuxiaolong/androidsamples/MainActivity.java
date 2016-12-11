@@ -1,49 +1,102 @@
 package com.wuxiaolong.androidsamples;
 
-import android.app.ActionBar;
-import android.app.Activity;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
-import android.widget.ListView;
+import android.view.ViewGroup;
+import android.widget.TextView;
 
-import com.wuxiaolong.androidsamples.utils.AppConfig;
+import com.wuxiaolong.androidsamples.itemtouchhelper.ItemTouchHelperActivity;
+import com.wuxiaolong.androidsamples.retrofit.RetrofitActivity;
+import com.wuxiaolong.androidsamples.videoplay.VideoPlayViewActivity;
+import com.wuxiaolong.androidsamples.viewdraghelper.ViewDragActivity;
 
-import butterknife.ButterKnife;
-import butterknife.InjectView;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.List;
 
 
-public class MainActivity extends Activity {
-    @InjectView(R.id.mListView)
-    ListView mListView;
+public class MainActivity extends BaseActivity {
+    private RecyclerView recyclerView;
+    private RecyclerViewAdatper recyclerViewAdatper;
+    private List<String> textList = new ArrayList<>();
+    private List<Class> classList = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        ButterKnife.inject(this);
-        ActionBar actionBar = getActionBar();
-        actionBar.setTitle("小尛龙");
-//        actionBar.setDisplayShowHomeEnabled(false);
-//        actionBar.setDisplayHomeAsUpEnabled(false);
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
-                android.R.layout.simple_list_item_1, android.R.id.text1, AppConfig.mActivityName);
-        mListView.setAdapter(adapter);
-        mListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-                                             @Override
-                                             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                                                 Intent intent = new Intent(MainActivity.this, AppConfig.mActivities[position]);
-                                                 startActivity(intent);
-                                             }
-                                         }
-        );
+        initToolbarAsHome("吴小龙同學");
+        initData();
+        recyclerView = (RecyclerView) findViewById(R.id.recycleerView);
+        recyclerViewAdatper = new RecyclerViewAdatper();
+        recyclerView.setAdapter(recyclerViewAdatper);
+        recyclerView.setLayoutManager(new LinearLayoutManager(context));
     }
 
+    private void initData() {
+
+        textList.add("ViewDrag");
+        textList.add("VideoPlay");
+        textList.add("Retrofit");
+        textList.add("ItemTouchHelper");
+        Collections.sort(textList);
+
+        classList.add(ViewDragActivity.class);
+        classList.add(VideoPlayViewActivity.class);
+        classList.add(RetrofitActivity.class);
+        classList.add(ItemTouchHelperActivity.class);
+        Collections.sort(classList, new Comparator<Class>() {
+            @Override
+            public int compare(Class c1, Class c2) {
+                return c1.getSimpleName().compareTo(c2.getSimpleName());
+            }
+        });
+
+    }
+
+    public class RecyclerViewAdatper extends RecyclerView.Adapter<RecyclerViewAdatper.ViewHolder> {
+
+
+        @Override
+        public RecyclerViewAdatper.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+            View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_main, parent, false);
+            return new RecyclerViewAdatper.ViewHolder(view);
+        }
+
+        @Override
+        public void onBindViewHolder(RecyclerViewAdatper.ViewHolder holder, int position) {
+            holder.textView.setText(textList.get(position));
+
+        }
+
+        @Override
+        public int getItemCount() {
+            return textList.size();
+        }
+
+        class ViewHolder extends RecyclerView.ViewHolder {
+            public TextView textView;
+
+            public ViewHolder(View itemView) {
+                super(itemView);
+                textView = (TextView) itemView.findViewById(R.id.text);
+                itemView.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        startActivity(new Intent(MainActivity.this, classList.get(getLayoutPosition())));
+                    }
+                });
+            }
+        }
+    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

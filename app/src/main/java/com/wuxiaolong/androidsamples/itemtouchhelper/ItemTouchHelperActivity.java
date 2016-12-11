@@ -5,7 +5,6 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v4.view.MotionEventCompat;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.helper.ItemTouchHelper;
@@ -39,7 +38,7 @@ public class ItemTouchHelperActivity extends AppCompatActivity {
         recyclerViewAdatper = new RecyclerViewAdatper();
         recyclerView.setAdapter(recyclerViewAdatper);
         recyclerView.setLayoutManager(new LinearLayoutManager(context));
-        recyclerView.setLayoutManager(new GridLayoutManager(context, 2));
+        //recyclerView.setLayoutManager(new GridLayoutManager(context, 2));
         //recyclerView.setLayoutManager(new StaggeredGridLayoutManager(3, OrientationHelper.VERTICAL));
         ItemTouchHelperCallback itemTouchHelperCallback = new ItemTouchHelperCallback(recyclerViewAdatper);
         itemTouchHelper = new ItemTouchHelper(itemTouchHelperCallback);
@@ -69,7 +68,7 @@ public class ItemTouchHelperActivity extends AppCompatActivity {
 
         @Override
         public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-            View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_main, parent, false);
+            View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_touch_helper_item, parent, false);
             return new ViewHolder(view);
         }
 

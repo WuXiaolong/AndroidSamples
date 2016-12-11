@@ -57,7 +57,7 @@ public class DownloadActivity extends DownloadBaseActivity implements View.OnCli
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_download);
         ButterKnife.inject(this);
-        actionBar.setTitle("下载");
+//        actionBar.setTitle("下载");
         initView();
         initNotify(true);
         initBroadcastReceiver();

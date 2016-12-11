@@ -10,10 +10,7 @@ import com.wuxiaolong.androidsamples.photograph.PhotographActivity;
  * Created by wxl on 2014/11/4.
  */
 public class AppConfig {
-    public static Class[] mActivities = new Class[]{PhotographActivity.class, DownloadActivity.class
-    };
-    public static String[] mActivityName = {"拍照+相册","下载"
-    };
+
     public static int PHOTOGRAPH = 1;
     public static int PHOTO_CUTTING = 2;
     public static int REQUEST_CODE_USER_ALBUM = 3;// 验证码登录
