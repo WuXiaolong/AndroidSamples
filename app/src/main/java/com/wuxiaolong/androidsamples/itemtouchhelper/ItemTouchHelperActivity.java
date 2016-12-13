@@ -8,6 +8,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.helper.ItemTouchHelper;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
@@ -99,6 +100,12 @@ public class ItemTouchHelperActivity extends AppCompatActivity {
                 super(itemView);
                 textView = (TextView) itemView.findViewById(R.id.text);
                 handleView = (ImageView) itemView.findViewById(R.id.handle);
+                itemView.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        Log.d("wxl",getLayoutPosition()+"=text="+mItems.get(getLayoutPosition()));
+                    }
+                });
             }
 
             @Override
