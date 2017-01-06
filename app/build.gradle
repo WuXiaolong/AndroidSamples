@@ -22,7 +22,11 @@ android {
         targetCompatibility JavaVersion.VERSION_1_8
     }
 }
-
+repositories {
+    flatDir {
+        dirs 'aars'
+    }
+}
 dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
     compile 'com.android.support:support-v4:25.0.0'
@@ -30,7 +34,9 @@ dependencies {
     compile 'com.android.support:appcompat-v7:25.0.0'
     compile 'com.android.support:palette-v7:25.0.0'
     compile 'com.android.support:design:25.0.0'
-    compile project(':libraries:videoPlayViewLibrary')
+    compile(name: 'SwipeBackLayoutLibrary-release', ext: 'aar')
+    compile(name: 'VideoPlayViewLibrary-release', ext: 'aar')
+    //compile project(':libraries:VideoPlayViewLibrary')
     compile 'com.jakewharton:butterknife:5.1.1'
     compile 'io.reactivex:rxandroid:1.1.0'
     compile 'io.reactivex:rxjava:1.1.0'

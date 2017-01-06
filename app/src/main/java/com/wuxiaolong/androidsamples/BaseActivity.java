@@ -2,14 +2,15 @@ package com.wuxiaolong.androidsamples;
 
 import android.content.Context;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
+
+import me.imid.swipebacklayout.lib.app.SwipeBackActivity;
 
 /**
  * Created by wxl on 2014/11/10.
  */
-public class BaseActivity extends AppCompatActivity {
+public class BaseActivity extends SwipeBackActivity {
     public Context context;
 
     protected void onCreate(Bundle savedInstanceState) {

@@ -33,6 +33,8 @@ public class MainActivity extends BaseActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        //设置是否滑动退出
+        setSwipeBackEnable(false);
         initToolbarAsHome("吴小龙同學");
         initData();
         recyclerView = (RecyclerView) findViewById(R.id.recycleerView);

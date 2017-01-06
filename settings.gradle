@@ -1,1 +1,1 @@
-include ':app', ':libraries:videoPlayViewLibrary'
+include ':app', ':libraries:VideoPlayViewLibrary'
