@@ -1,1 +1,1 @@
-include ':app', ':libraries:VideoPlayViewLibrary'
+include ':app', ':libraries:VideoPlayViewLibrary', ':libraries:SwipeBackLayoutLibrary'
