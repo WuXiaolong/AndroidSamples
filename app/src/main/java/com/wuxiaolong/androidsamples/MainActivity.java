@@ -13,6 +13,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.wuxiaolong.androidsamples.itemtouchhelper.ItemTouchHelperActivity;
+import com.wuxiaolong.androidsamples.notification.NotificationActivity;
 import com.wuxiaolong.androidsamples.retrofit.RetrofitActivity;
 import com.wuxiaolong.androidsamples.videoplay.VideoPlayViewActivity;
 import com.wuxiaolong.androidsamples.viewdraghelper.ViewDragActivity;
@@ -45,12 +46,14 @@ public class MainActivity extends BaseActivity {
 
     private void initData() {
 
+        textList.add("Notification");
         textList.add("ViewDrag");
         textList.add("VideoPlay");
         textList.add("Retrofit");
         textList.add("ItemTouchHelper");
         Collections.sort(textList);
 
+        classList.add(NotificationActivity.class);
         classList.add(ViewDragActivity.class);
         classList.add(VideoPlayViewActivity.class);
         classList.add(RetrofitActivity.class);

@@ -96,7 +96,14 @@
             <!-- </intent-filter> -->
         </activity>
         <activity android:name=".itemtouchhelper.ItemTouchHelperActivity">
-
+        </activity>
+        <activity android:name=".notification.NotificationActivity">
+        </activity>
+        <activity
+            android:name=".notification.ResultActivity">
+        </activity>
+        <activity
+            android:name=".notification.Result2Activity">
         </activity>
     </application>
 
