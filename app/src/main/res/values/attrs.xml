@@ -2,6 +2,12 @@
 <resources>
     <!--<declare-styleable>声明自定义属性-->
     <declare-styleable name="CircleView">
-        <attr name="circle_color" format="color" />
+        <attr name="circle_color" format="color"/>
+    </declare-styleable>
+    <declare-styleable name="EmptyView">
+        <!--<attr>声明具体自定义属性-->
+        <attr name="empty_text" format="string"/>
+        <attr name="empty_text_color" format="color"/>
+        <attr name="empty_image" format="reference"/>
     </declare-styleable>
 </resources>

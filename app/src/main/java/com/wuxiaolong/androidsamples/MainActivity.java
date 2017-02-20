@@ -12,6 +12,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.wuxiaolong.androidsamples.customview.EmptyViewActivity;
 import com.wuxiaolong.androidsamples.itemtouchhelper.ItemTouchHelperActivity;
 import com.wuxiaolong.androidsamples.notification.NotificationActivity;
 import com.wuxiaolong.androidsamples.retrofit.RetrofitActivity;
@@ -51,13 +52,18 @@ public class MainActivity extends BaseActivity {
         textList.add("VideoPlay");
         textList.add("Retrofit");
         textList.add("ItemTouchHelper");
-        Collections.sort(textList);
+        textList.add("EmptyView");
+
 
         classList.add(NotificationActivity.class);
         classList.add(ViewDragActivity.class);
         classList.add(VideoPlayViewActivity.class);
         classList.add(RetrofitActivity.class);
         classList.add(ItemTouchHelperActivity.class);
+        classList.add(EmptyViewActivity.class);
+
+        Collections.sort(textList);
+
         Collections.sort(classList, new Comparator<Class>() {
             @Override
             public int compare(Class c1, Class c2) {

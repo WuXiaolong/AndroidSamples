@@ -67,7 +67,7 @@
         <activity
             android:name=".motionevent.MotionEventActivity"
             android:label="@string/title_activity_motion_event"/>
-        <activity android:name=".customview.CustomViewActivity"/>
+        <activity android:name=".customview.EmptyViewActivity"/>
         <activity android:name=".rxjava.RxJavaActivity"/>
         <activity android:name=".RetrolambdaActivity"/>
         <activity
