@@ -6,7 +6,7 @@ android {
 
     defaultConfig {
         applicationId "com.wuxiaolong.androidsamples"
-        minSdkVersion 16
+        minSdkVersion 23
         targetSdkVersion 25
         versionCode 1
         versionName "1.0"
