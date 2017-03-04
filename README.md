@@ -1,7 +1,7 @@
 # AndroidSamples
-这是我平时练习的Sample，所有的精华都发到了博客，这里是代码。
+这是我平时练习的Sample，相关文档介绍见我的博客。
 
-# 涉及博客
+# 我的博客
 [http://wuxiaolong.me/](http://wuxiaolong.me/)
 
 # 微信公众号
@@ -9,6 +9,4 @@
 
 ![](http://7q5c2h.com1.z0.glb.clouddn.com/qrcode_wuxiaolong.jpg)
 
-# 关于作者
-[点击查看](http://wuxiaolong.me/about/)
 
