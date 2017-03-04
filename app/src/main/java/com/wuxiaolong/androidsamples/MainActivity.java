@@ -16,6 +16,7 @@ import com.wuxiaolong.androidsamples.customview.EmptyViewActivity;
 import com.wuxiaolong.androidsamples.itemtouchhelper.ItemTouchHelperActivity;
 import com.wuxiaolong.androidsamples.notification.NotificationActivity;
 import com.wuxiaolong.androidsamples.retrofit.RetrofitActivity;
+import com.wuxiaolong.androidsamples.runtimepermission.RuntimePermissionActivity;
 import com.wuxiaolong.androidsamples.videoplay.VideoPlayViewActivity;
 import com.wuxiaolong.androidsamples.viewdraghelper.ViewDragActivity;
 
@@ -53,6 +54,7 @@ public class MainActivity extends BaseActivity {
         textList.add("Retrofit");
         textList.add("ItemTouchHelper");
         textList.add("EmptyView");
+        textList.add("RuntimePermission");
 
 
         classList.add(NotificationActivity.class);
@@ -61,6 +63,7 @@ public class MainActivity extends BaseActivity {
         classList.add(RetrofitActivity.class);
         classList.add(ItemTouchHelperActivity.class);
         classList.add(EmptyViewActivity.class);
+        classList.add(RuntimePermissionActivity.class);
 
         Collections.sort(textList);
 

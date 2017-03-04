@@ -7,7 +7,7 @@ android {
     defaultConfig {
         applicationId "com.wuxiaolong.androidsamples"
         minSdkVersion 16
-        targetSdkVersion 22
+        targetSdkVersion 25
         versionCode 1
         versionName "1.0"
     }
@@ -45,4 +45,5 @@ dependencies {
     compile 'com.squareup.okhttp3:okhttp:3.5.0'
     compile 'com.jakewharton:disklrucache:2.0.2'
     compile 'com.wuxiaolong.androidutils:androidutils:1.0.6'
+
 }
