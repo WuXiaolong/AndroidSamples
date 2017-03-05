@@ -3,15 +3,18 @@
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <!-- Customize your theme here. -->
-     <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
         <item name="actionMenuTextColor">@android:color/white</item>
         <item name="colorControlNormal">@color/white</item>
     </style>
 
+    <style name="AppTheme.Launcher">
+        <item name="android:windowBackground">@drawable/launcher</item>
+    </style>
 
-    <style name="NotificationTitle" parent="android:TextAppearance.StatusBar.EventContent.Title" />
+    <style name="NotificationTitle" parent="android:TextAppearance.StatusBar.EventContent.Title"/>
 
-    <style name="NotificationContent" parent="android:TextAppearance.StatusBar.EventContent" />
+    <style name="NotificationContent" parent="android:TextAppearance.StatusBar.EventContent"/>
 </resources>
