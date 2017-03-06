@@ -5,7 +5,7 @@ package com.wuxiaolong.androidsamples.runtimepermission;
  * on 2017/3/4.
  */
 
-public interface onPermissionCallbackListener {
+public interface OnPermissionCallbackListener {
     void onGranted();
 
     void onDenied();

@@ -1,11 +1,21 @@
 package com.wuxiaolong.androidsamples.runtimepermission;
 
+import android.Manifest;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.Toast;
 
 import com.wuxiaolong.androidsamples.BaseActivity;
 import com.wuxiaolong.androidsamples.R;
+import com.wuxiaolong.androidutils.library.LogUtil;
+
+import java.util.List;
+
+import pub.devrel.easypermissions.AfterPermissionGranted;
+import pub.devrel.easypermissions.AppSettingsDialog;
+import pub.devrel.easypermissions.EasyPermissions;
 
 import static android.Manifest.permission.ACCESS_FINE_LOCATION;
 import static android.Manifest.permission.BODY_SENSORS;
@@ -22,13 +32,14 @@ import static android.Manifest.permission.SEND_SMS;
  * 微信公众号：吴小龙同学
  * 个人博客：http://wuxiaolong.me/
  */
-public class RuntimePermissionActivity extends BaseActivity implements onPermissionCallbackListener {
+public class RuntimePermissionActivity extends BaseActivity implements OnPermissionCallbackListener, EasyPermissions.PermissionCallbacks {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_runtime_permission);
     }
+
 
     public void onPermission(View v) {
         switch (v.getId()) {
@@ -71,6 +82,9 @@ public class RuntimePermissionActivity extends BaseActivity implements onPermiss
             case R.id.contactsLocation:
                 requestContactsLocation();
                 break;
+            case R.id.easyPermissions:
+                methodRequiresTwoPermission();
+                break;
         }
     }
 
@@ -82,5 +96,56 @@ public class RuntimePermissionActivity extends BaseActivity implements onPermiss
     @Override
     public void onDenied() {
         Log.i("wxl", "授权请求拒绝");
+    }
+
+
+    @AfterPermissionGranted(1010)
+    private void methodRequiresTwoPermission() {
+        String[] perms = {Manifest.permission.CAMERA, BODY_SENSORS, SEND_SMS};
+        if (EasyPermissions.hasPermissions(this, perms)) {
+            // Already have permission, do the thing
+            // ...
+            LogUtil.d("Already have permission, do the thing");
+        } else {
+            // Do not have permissions, request them now
+            LogUtil.d("Do not have permissions, request them now");
+            EasyPermissions.requestPermissions(this, "camera_and_wifi_rationale", 1010, perms);
+        }
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+
+        // Forward results to EasyPermissions
+        EasyPermissions.onRequestPermissionsResult(requestCode, permissions, grantResults, this);
+    }
+
+    @Override
+    public void onPermissionsGranted(int requestCode, List<String> list) {
+        // Some permissions have been granted
+        // ...
+        LogUtil.d("Some permissions have been granted");
+    }
+
+    @Override
+    public void onPermissionsDenied(int requestCode, List<String> list) {
+        // Some permissions have been denied
+        // ...
+        LogUtil.d("Some permissions have been denied");
+        if (EasyPermissions.somePermissionPermanentlyDenied(RuntimePermissionActivity.this, list)) {
+            new AppSettingsDialog.Builder(this).build().show();
+        }
+    }
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        if (requestCode == AppSettingsDialog.DEFAULT_SETTINGS_REQ_CODE) {
+            // Do something after user returned from app settings screen, like showing a Toast.
+            Toast.makeText(this, "returned_from_app_settings_to_activity", Toast.LENGTH_SHORT)
+                    .show();
+        }
     }
 }

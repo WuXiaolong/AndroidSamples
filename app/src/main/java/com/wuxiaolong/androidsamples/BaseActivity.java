@@ -8,7 +8,7 @@ import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.MenuItem;
 
-import com.wuxiaolong.androidsamples.runtimepermission.onPermissionCallbackListener;
+import com.wuxiaolong.androidsamples.runtimepermission.OnPermissionCallbackListener;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -31,7 +31,7 @@ public class BaseActivity extends SwipeBackActivity {
     public static int REQUEST_PERMISSION = 100;
     public static int REQUEST_READ_CONTACTS = 101;
     public static int REQUEST_READ_CONTACTS_LOCATION = 102;
-    public onPermissionCallbackListener onPermissionCallbackListener;
+    public OnPermissionCallbackListener onPermissionCallbackListener;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -110,7 +110,7 @@ public class BaseActivity extends SwipeBackActivity {
     }
 
     @TargetApi(M)
-    public void requestRuntimePermission(String permission, onPermissionCallbackListener onPermissionCallbackListener) {
+    public void requestRuntimePermission(String permission, OnPermissionCallbackListener onPermissionCallbackListener) {
         this.onPermissionCallbackListener = onPermissionCallbackListener;
         switch (checkSelfPermission(permission)) {
             case PackageManager.PERMISSION_GRANTED:

@@ -45,5 +45,6 @@ dependencies {
     compile 'com.squareup.okhttp3:okhttp:3.5.0'
     compile 'com.jakewharton:disklrucache:2.0.2'
     compile 'com.wuxiaolong.androidutils:androidutils:1.0.6'
+    compile 'pub.devrel:easypermissions:0.3.0'
 
 }
