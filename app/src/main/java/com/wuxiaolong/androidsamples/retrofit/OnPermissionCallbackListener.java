@@ -1,8 +1,8 @@
-package com.wuxiaolong.androidsamples.runtimepermission;
+package com.wuxiaolong.androidsamples.retrofit;
 
 /**
- * Created by WuXiaolong
- * on 2017/3/4.
+ * Created by Administrator
+ * on 2017/3/7.
  */
 
 public interface OnPermissionCallbackListener {
