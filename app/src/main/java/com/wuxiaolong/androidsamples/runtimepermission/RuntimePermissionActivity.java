@@ -9,6 +9,7 @@ import android.widget.Toast;
 
 import com.wuxiaolong.androidsamples.BaseActivity;
 import com.wuxiaolong.androidsamples.R;
+import com.wuxiaolong.androidsamples.retrofit.OnPermissionCallbackListener;
 import com.wuxiaolong.androidutils.library.LogUtil;
 
 import java.util.List;
@@ -101,7 +102,7 @@ public class RuntimePermissionActivity extends BaseActivity implements OnPermiss
 
     @AfterPermissionGranted(1010)
     private void methodRequiresTwoPermission() {
-        String[] perms = {Manifest.permission.CAMERA, BODY_SENSORS, SEND_SMS};
+        String[] perms = {Manifest.permission.CAMERA, SEND_SMS};
         if (EasyPermissions.hasPermissions(this, perms)) {
             // Already have permission, do the thing
             // ...
@@ -109,7 +110,7 @@ public class RuntimePermissionActivity extends BaseActivity implements OnPermiss
         } else {
             // Do not have permissions, request them now
             LogUtil.d("Do not have permissions, request them now");
-            EasyPermissions.requestPermissions(this, "camera_and_wifi_rationale", 1010, perms);
+            EasyPermissions.requestPermissions(this, "camera_and_send_sms", 1010, perms);
         }
     }
 
@@ -125,15 +126,15 @@ public class RuntimePermissionActivity extends BaseActivity implements OnPermiss
     public void onPermissionsGranted(int requestCode, List<String> list) {
         // Some permissions have been granted
         // ...
-        LogUtil.d("Some permissions have been granted");
+        LogUtil.d("Some permissions have been granted=" + requestCode);
     }
 
     @Override
     public void onPermissionsDenied(int requestCode, List<String> list) {
         // Some permissions have been denied
         // ...
-        LogUtil.d("Some permissions have been denied");
-        if (EasyPermissions.somePermissionPermanentlyDenied(RuntimePermissionActivity.this, list)) {
+        LogUtil.d("Some permissions have been denied=" + requestCode);
+        if (EasyPermissions.somePermissionPermanentlyDenied(this, list)) {
             new AppSettingsDialog.Builder(this).build().show();
         }
     }
