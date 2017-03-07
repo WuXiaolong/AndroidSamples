@@ -9,7 +9,6 @@ import android.widget.Toast;
 
 import com.wuxiaolong.androidsamples.BaseActivity;
 import com.wuxiaolong.androidsamples.R;
-import com.wuxiaolong.androidsamples.retrofit.OnPermissionCallbackListener;
 import com.wuxiaolong.androidutils.library.LogUtil;
 
 import java.util.List;

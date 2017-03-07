@@ -1,4 +1,4 @@
-package com.wuxiaolong.androidsamples.retrofit;
+package com.wuxiaolong.androidsamples.runtimepermission;
 
 /**
  * Created by Administrator

@@ -8,7 +8,7 @@ import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.MenuItem;
 
-import com.wuxiaolong.androidsamples.retrofit.OnPermissionCallbackListener;
+import com.wuxiaolong.androidsamples.runtimepermission.OnPermissionCallbackListener;
 
 import java.util.ArrayList;
 import java.util.HashMap;
