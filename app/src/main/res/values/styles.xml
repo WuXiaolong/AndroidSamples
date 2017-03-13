@@ -11,10 +11,12 @@
     </style>
 
     <style name="AppTheme.Launcher">
-        <!--<item name="android:windowBackground">@drawable/launcher</item>-->
+        <!--品牌展示-->
+        <!--<item name="android:windowBackground">@drawable/branded_launch_screens</item>-->
+        <!--主页预加载-->
+        <item name="android:windowBackground">@drawable/placeholder_ui</item>
         <!--关闭启动窗口-->
-        <item name="android:windowDisablePreview">true</item>
-
+        <!--<item name="android:windowDisablePreview">true</item>-->
     </style>
 
     <style name="NotificationTitle" parent="android:TextAppearance.StatusBar.EventContent.Title" />

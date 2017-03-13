@@ -19,7 +19,7 @@ public class OpenGPSActivity extends AppCompatActivity {
         imageView = (ImageView) findViewById(R.id.imageView);
 //        imageView.setBackgroundResource(R.mipmap.about_us);
         DisplayMetrics displayMetrics = this.getResources().getDisplayMetrics();
-        imageView.setImageBitmap(decodeSampledBitmapFromResource(getResources(), R.mipmap.about_us, displayMetrics.widthPixels, displayMetrics.heightPixels));
+        imageView.setImageBitmap(decodeSampledBitmapFromResource(getResources(), R.mipmap.dog, displayMetrics.widthPixels, displayMetrics.heightPixels));
 
     }
 

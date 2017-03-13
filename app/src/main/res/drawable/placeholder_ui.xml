@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android"
+    android:opacity="opaque">
+    <!--状态栏颜色-->
+    <item android:drawable="@color/colorPrimaryDark" />
+    <!--假装这里是个toolbar-->
+    <item
+        android:drawable="@color/colorPrimary"
+        android:top="25dp" />
+    <!--状态栏25+toolbar56=距离top81-->
+    <item
+        android:drawable="@android:color/white"
+        android:top="81dp" />
+</layer-list>
