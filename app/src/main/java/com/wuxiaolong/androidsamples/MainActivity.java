@@ -1,20 +1,8 @@
 package com.wuxiaolong.androidsamples;
 
-import android.app.DownloadManager;
-import android.content.ActivityNotFoundException;
-import android.content.BroadcastReceiver;
-import android.content.Context;
-import android.content.DialogInterface;
 import android.content.Intent;
-import android.content.IntentFilter;
-import android.content.pm.PackageManager;
-import android.database.Cursor;
 import android.net.Uri;
-import android.os.Build;
 import android.os.Bundle;
-import android.os.Environment;
-import android.provider.Settings;
-import android.support.v4.content.FileProvider;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -23,7 +11,6 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.wuxiaolong.androidsamples.customview.EmptyViewActivity;
 import com.wuxiaolong.androidsamples.itemtouchhelper.ItemTouchHelperActivity;
@@ -33,7 +20,6 @@ import com.wuxiaolong.androidsamples.runtimepermission.RuntimePermissionActivity
 import com.wuxiaolong.androidsamples.videoplay.VideoPlayViewActivity;
 import com.wuxiaolong.androidsamples.viewdraghelper.ViewDragActivity;
 
-import java.io.File;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
