@@ -11,6 +11,20 @@ android {
         versionCode 1
         versionName "1.0"
     }
+    signingConfigs {
+        release {
+            storeFile file('WuXiaolong.jks')
+            storePassword '123456'
+            keyAlias 'android.keystore'
+            keyPassword '123456'
+        }
+        debug {
+            storeFile file('keystore/android.keystore')
+            storePassword '123456'
+            keyAlias 'android.keystore'
+            keyPassword '123456'
+        }
+    }
     buildTypes {
         release {
             minifyEnabled false
@@ -27,6 +41,7 @@ repositories {
         dirs 'aars'
     }
 }
+//多渠道打包，命令行打包：gradlew assembleRelease
 dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
     compile 'com.android.support:support-v4:25.0.0'
