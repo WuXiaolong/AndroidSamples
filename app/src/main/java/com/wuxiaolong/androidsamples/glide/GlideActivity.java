@@ -25,7 +25,7 @@ public class GlideActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_glide);
         imageView = (ImageView) findViewById(R.id.imageView);
-        String imageUrl = "http://i.imgur.com/DvpvklR.png";
+        String imageUrl = "https://raw.githubusercontent.com/bumptech/glide/master/static/glide_logo.png";
 //        String imageUrl = "http://i.kinja-img.com/gawker-media/image/upload/s--B7tUiM5l--/gf2r69yorbdesguga10i.gif";
 //        Uri imageUrl = resourceIdToUri(GlideActivity.this, R.mipmap.image_test);
 //        int imageUrl = R.mipmap.image_test;

@@ -14,6 +14,7 @@ import android.widget.TextView;
 
 import com.wuxiaolong.androidsamples.appmemory.AppMemoryActivity;
 import com.wuxiaolong.androidsamples.customview.EmptyViewActivity;
+import com.wuxiaolong.androidsamples.glide.GlideActivity;
 import com.wuxiaolong.androidsamples.itemtouchhelper.ItemTouchHelperActivity;
 import com.wuxiaolong.androidsamples.notification.NotificationActivity;
 import com.wuxiaolong.androidsamples.retrofit.RetrofitActivity;
@@ -58,6 +59,7 @@ public class MainActivity extends BaseActivity {
         textList.add("EmptyView");
         textList.add("RuntimePermission");
         textList.add("AppMemory");
+        textList.add("Glide");
 
 
         classList.add(NotificationActivity.class);
@@ -68,6 +70,7 @@ public class MainActivity extends BaseActivity {
         classList.add(EmptyViewActivity.class);
         classList.add(RuntimePermissionActivity.class);
         classList.add(AppMemoryActivity.class);
+        classList.add(GlideActivity.class);
 
         Collections.sort(textList);
 
