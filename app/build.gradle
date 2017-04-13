@@ -6,7 +6,7 @@ android {
 
     defaultConfig {
         applicationId "com.wuxiaolong.androidsamples"
-        minSdkVersion 23
+        minSdkVersion 21
         targetSdkVersion 25
         versionCode 1
         versionName "1.0"
@@ -14,15 +14,15 @@ android {
     signingConfigs {
         release {
             storeFile file('WuXiaolong.jks')
-            storePassword '123456'
-            keyAlias 'android.keystore'
-            keyPassword '123456'
+            storePassword 'android'
+            keyAlias 'android'
+            keyPassword 'android'
         }
         debug {
-            storeFile file('keystore/android.keystore')
-            storePassword '123456'
-            keyAlias 'android.keystore'
-            keyPassword '123456'
+            storeFile file('WuXiaolong.jks')
+            storePassword 'android'
+            keyAlias 'android'
+            keyPassword 'android'
         }
     }
     buildTypes {
@@ -44,13 +44,13 @@ repositories {
 //多渠道打包，命令行打包：gradlew assembleRelease
 dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
+    compile(name: 'SwipeBackLayoutLibrary-release', ext: 'aar')
+    compile(name: 'VideoPlayViewLibrary-release', ext: 'aar')
+    //compile project(':libraries:VideoPlayViewLibrary')
     compile 'com.android.support:support-v4:25.0.0'
     compile 'com.android.support:appcompat-v7:25.0.0'
     compile 'com.android.support:palette-v7:25.0.0'
     compile 'com.android.support:design:25.0.0'
-    compile(name: 'SwipeBackLayoutLibrary-release', ext: 'aar')
-    compile(name: 'VideoPlayViewLibrary-release', ext: 'aar')
-    //compile project(':libraries:VideoPlayViewLibrary')
     compile 'com.jakewharton:butterknife:5.1.1'
     compile 'io.reactivex:rxandroid:1.1.0'
     compile 'io.reactivex:rxjava:1.1.0'
@@ -61,5 +61,5 @@ dependencies {
     compile 'com.jakewharton:disklrucache:2.0.2'
     compile 'com.wuxiaolong.androidutils:androidutils:1.0.6'
     compile 'pub.devrel:easypermissions:0.3.0'
-
+    compile 'com.android.support.constraint:constraint-layout:1.0.0-beta4'
 }

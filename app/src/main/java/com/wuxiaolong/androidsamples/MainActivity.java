@@ -12,6 +12,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.wuxiaolong.androidsamples.appmemory.AppMemoryActivity;
 import com.wuxiaolong.androidsamples.customview.EmptyViewActivity;
 import com.wuxiaolong.androidsamples.itemtouchhelper.ItemTouchHelperActivity;
 import com.wuxiaolong.androidsamples.notification.NotificationActivity;
@@ -56,6 +57,7 @@ public class MainActivity extends BaseActivity {
         textList.add("ItemTouchHelper");
         textList.add("EmptyView");
         textList.add("RuntimePermission");
+        textList.add("AppMemory");
 
 
         classList.add(NotificationActivity.class);
@@ -65,6 +67,7 @@ public class MainActivity extends BaseActivity {
         classList.add(ItemTouchHelperActivity.class);
         classList.add(EmptyViewActivity.class);
         classList.add(RuntimePermissionActivity.class);
+        classList.add(AppMemoryActivity.class);
 
         Collections.sort(textList);
 
