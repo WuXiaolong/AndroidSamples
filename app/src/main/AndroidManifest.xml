@@ -64,12 +64,12 @@
             android:name=".lineargradienttextview.LinearGradientTextViewActivity"
             android:label="@string/title_activity_linear_gradient_text_view" />
         <activity android:name=".dragview.DragViewActivity" />
-        <activity android:name=".viewdraghelper.ViewDragActivity"></activity>
+        <activity android:name=".viewdraghelper.ViewDragActivity" />
         <activity android:name=".LifeCycleActivity" />
         <activity
             android:name=".StartModeActivity"
             android:launchMode="standard" />
-        <activity android:name=".paintcanvas.PaintCanvasActivity"></activity>
+        <activity android:name=".paintcanvas.PaintCanvasActivity" />
         <activity android:name=".ProgressBarActivity" />
         <activity
             android:name=".motionevent.MotionEventActivity"
@@ -102,12 +102,13 @@
             <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
             <!-- </intent-filter> -->
         </activity>
-        <activity android:name=".itemtouchhelper.ItemTouchHelperActivity"></activity>
-        <activity android:name=".notification.NotificationActivity"></activity>
-        <activity android:name=".notification.ResultActivity"></activity>
-        <activity android:name=".notification.Result2Activity"></activity>
-        <activity android:name=".runtimepermission.RuntimePermissionActivity"></activity>
-        <activity android:name=".appmemory.AppMemoryActivity"></activity>
+        <activity android:name=".itemtouchhelper.ItemTouchHelperActivity" />
+        <activity android:name=".notification.NotificationActivity" />
+        <activity android:name=".notification.ResultActivity" />
+        <activity android:name=".notification.Result2Activity" />
+        <activity android:name=".runtimepermission.RuntimePermissionActivity" />
+        <activity android:name=".appmemory.AppMemoryActivity" />
+        <activity android:name=".designpatterns.ChainOfResponsibilityActivity"></activity>
     </application>
 
 </manifest>

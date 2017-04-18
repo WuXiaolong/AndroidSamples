@@ -14,6 +14,7 @@ import android.widget.TextView;
 
 import com.wuxiaolong.androidsamples.appmemory.AppMemoryActivity;
 import com.wuxiaolong.androidsamples.customview.EmptyViewActivity;
+import com.wuxiaolong.androidsamples.designpatterns.ChainOfResponsibilityActivity;
 import com.wuxiaolong.androidsamples.glide.GlideActivity;
 import com.wuxiaolong.androidsamples.itemtouchhelper.ItemTouchHelperActivity;
 import com.wuxiaolong.androidsamples.notification.NotificationActivity;
@@ -47,6 +48,8 @@ public class MainActivity extends BaseActivity {
         recyclerViewAdatper = new RecyclerViewAdatper();
         recyclerView.setAdapter(recyclerViewAdatper);
         recyclerView.setLayoutManager(new LinearLayoutManager(context));
+//        Trace.beginSection("beginSection");
+//        Trace.endSection();
     }
 
     private void initData() {
@@ -60,8 +63,10 @@ public class MainActivity extends BaseActivity {
         textList.add("RuntimePermission");
         textList.add("AppMemory");
         textList.add("Glide");
+        textList.add("ChainOfResponsibility");
 
 
+        classList.add(ChainOfResponsibilityActivity.class);
         classList.add(NotificationActivity.class);
         classList.add(ViewDragActivity.class);
         classList.add(VideoPlayViewActivity.class);
