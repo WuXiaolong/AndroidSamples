@@ -47,12 +47,12 @@ public class DragDropActivity extends BaseActivity {
                     case DragEvent.ACTION_DROP:
                         // 拖拽处理
                         //获取拖拽的view
-                        View view = (View) event.getLocalState();
-                        ViewGroup owner = (ViewGroup) view.getParent();
-                        owner.removeView(view);
+                        View dragView = (View) event.getLocalState();
+                        ViewGroup owner = (ViewGroup) dragView.getParent();
+                        owner.removeView(dragView);
                         //拖放区view
                         RelativeLayout container = (RelativeLayout) v;
-                        container.addView(view);
+                        container.addView(dragView);
                         break;
                     case DragEvent.ACTION_DRAG_ENDED:
                         //拖出拖放区，释放
