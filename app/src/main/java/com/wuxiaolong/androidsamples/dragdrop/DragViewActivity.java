@@ -1,4 +1,4 @@
-package com.wuxiaolong.androidsamples.dragview;
+package com.wuxiaolong.androidsamples.dragdrop;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;

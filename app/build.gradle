@@ -1,8 +1,10 @@
 apply plugin: 'com.android.application'
 apply plugin: 'me.tatarka.retrolambda'
+def supportLibraryVersion = "25.3.1"
+def constraintLayoutVersion = "1.0.2"
 android {
     compileSdkVersion 25
-    buildToolsVersion "25.0.0"
+    buildToolsVersion "25.0.3"
 
     defaultConfig {
         applicationId "com.wuxiaolong.androidsamples"
@@ -44,13 +46,14 @@ repositories {
 //多渠道打包，命令行打包：gradlew assembleRelease
 dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
+    compile 'com.android.support:support-v4:' + supportLibraryVersion
+    compile 'com.android.support:appcompat-v7:' + supportLibraryVersion
+    compile 'com.android.support:palette-v7:' + supportLibraryVersion
+    compile 'com.android.support:design:' + supportLibraryVersion
+    compile 'com.android.support.constraint:constraint-layout:' + constraintLayoutVersion
     compile(name: 'SwipeBackLayoutLibrary-release', ext: 'aar')
     compile(name: 'VideoPlayViewLibrary-release', ext: 'aar')
-    //compile project(':libraries:VideoPlayViewLibrary')
-    compile 'com.android.support:support-v4:25.0.0'
-    compile 'com.android.support:appcompat-v7:25.0.0'
-    compile 'com.android.support:palette-v7:25.0.0'
-    compile 'com.android.support:design:25.0.0'
+
     compile 'com.jakewharton:butterknife:5.1.1'
     compile 'io.reactivex:rxandroid:1.1.0'
     compile 'io.reactivex:rxjava:1.1.0'
@@ -61,5 +64,5 @@ dependencies {
     compile 'com.jakewharton:disklrucache:2.0.2'
     compile 'com.wuxiaolong.androidutils:androidutils:1.0.6'
     compile 'pub.devrel:easypermissions:0.3.0'
-    compile 'com.android.support.constraint:constraint-layout:1.0.0-beta4'
+    compile 'com.android.support.constraint:constraint-layout:1.0.2'
 }

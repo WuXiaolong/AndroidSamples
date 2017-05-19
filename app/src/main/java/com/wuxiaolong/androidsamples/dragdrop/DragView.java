@@ -1,4 +1,4 @@
-package com.wuxiaolong.androidsamples.dragview;
+package com.wuxiaolong.androidsamples.dragdrop;
 
 import android.content.Context;
 import android.graphics.Color;

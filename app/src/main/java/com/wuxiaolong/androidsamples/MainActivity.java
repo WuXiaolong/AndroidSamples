@@ -15,6 +15,7 @@ import android.widget.TextView;
 import com.wuxiaolong.androidsamples.appmemory.AppMemoryActivity;
 import com.wuxiaolong.androidsamples.customview.EmptyViewActivity;
 import com.wuxiaolong.androidsamples.designpatterns.ChainOfResponsibilityActivity;
+import com.wuxiaolong.androidsamples.dragdrop.DragDropActivity;
 import com.wuxiaolong.androidsamples.glide.GlideActivity;
 import com.wuxiaolong.androidsamples.itemtouchhelper.ItemTouchHelperActivity;
 import com.wuxiaolong.androidsamples.notification.NotificationActivity;
@@ -64,6 +65,7 @@ public class MainActivity extends BaseActivity {
         textList.add("AppMemory");
         textList.add("Glide");
         textList.add("ChainOfResponsibility");
+        textList.add("DragDrop");
 
 
         classList.add(ChainOfResponsibilityActivity.class);
@@ -76,6 +78,7 @@ public class MainActivity extends BaseActivity {
         classList.add(RuntimePermissionActivity.class);
         classList.add(AppMemoryActivity.class);
         classList.add(GlideActivity.class);
+        classList.add(DragDropActivity.class);
 
         Collections.sort(textList);
 
