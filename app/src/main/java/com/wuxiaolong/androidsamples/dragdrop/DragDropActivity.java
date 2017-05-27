@@ -26,6 +26,7 @@ public class DragDropActivity extends BaseActivity {
                 // 设置拖动阴影,即你所拖动view(这也同时说明,你拖动的不过是一个影分身,本尊其实并没有移动)
                 View.DragShadowBuilder shadowBuilder = new View.DragShadowBuilder(view);
                 view.startDrag(data, shadowBuilder, view, 0);
+                
                 return true;
             }
         });
