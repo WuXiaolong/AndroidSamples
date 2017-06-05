@@ -66,6 +66,7 @@ public class MainActivity extends BaseActivity {
         textList.add("Glide");
         textList.add("ChainOfResponsibility");
         textList.add("DragDrop");
+        textList.add("Html5");
 
 
         classList.add(ChainOfResponsibilityActivity.class);
@@ -79,6 +80,7 @@ public class MainActivity extends BaseActivity {
         classList.add(AppMemoryActivity.class);
         classList.add(GlideActivity.class);
         classList.add(DragDropActivity.class);
+        classList.add(Html5Activity.class);
 
         Collections.sort(textList);
 
