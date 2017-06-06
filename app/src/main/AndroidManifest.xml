@@ -12,6 +12,8 @@
     <uses-permission android:name="android.permission.BODY_SENSORS" />
     <uses-permission android:name="android.permission.SEND_SMS" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
 
     <application
         android:allowBackup="true"
@@ -110,7 +112,7 @@
         <activity android:name=".appmemory.AppMemoryActivity" />
         <activity android:name=".designpatterns.ChainOfResponsibilityActivity" />
         <activity android:name=".dragdrop.DragDropActivity"></activity>
-        <activity android:name=".Html5Activity"></activity>
+        <activity android:name=".html5.Html5Activity"></activity>
     </application>
 
 </manifest>

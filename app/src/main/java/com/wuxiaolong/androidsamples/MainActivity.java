@@ -17,6 +17,7 @@ import com.wuxiaolong.androidsamples.customview.EmptyViewActivity;
 import com.wuxiaolong.androidsamples.designpatterns.ChainOfResponsibilityActivity;
 import com.wuxiaolong.androidsamples.dragdrop.DragDropActivity;
 import com.wuxiaolong.androidsamples.glide.GlideActivity;
+import com.wuxiaolong.androidsamples.html5.Html5Activity;
 import com.wuxiaolong.androidsamples.itemtouchhelper.ItemTouchHelperActivity;
 import com.wuxiaolong.androidsamples.notification.NotificationActivity;
 import com.wuxiaolong.androidsamples.retrofit.RetrofitActivity;

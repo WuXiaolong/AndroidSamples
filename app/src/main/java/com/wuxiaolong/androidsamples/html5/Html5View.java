@@ -1,25 +1,43 @@
-package com.wuxiaolong.androidsamples;
+package com.wuxiaolong.androidsamples.html5;
 
+import android.content.Context;
 import android.graphics.Bitmap;
-import android.os.Bundle;
 import android.os.Message;
-import android.support.v7.app.AppCompatActivity;
+import android.util.AttributeSet;
+import android.util.Log;
 import android.view.KeyEvent;
+import android.view.View;
 import android.view.ViewGroup;
 import android.webkit.GeolocationPermissions;
 import android.webkit.WebChromeClient;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
+import android.widget.RelativeLayout;
 
-public class Html5Activity extends AppCompatActivity {
+import com.wuxiaolong.androidsamples.R;
+
+
+public class Html5View extends RelativeLayout {
     private WebView webView;
+    private Context context;
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_html5);
-        webView = (WebView) findViewById(R.id.webView);
+    public Html5View(Context context) {
+        super(context);
+        this.context = context;
+        initView();
+    }
+
+    public Html5View(Context context, AttributeSet attrs) {
+        super(context, attrs);
+        this.context = context;
+        initView();
+    }
+
+    private void initView() {
+        Log.d("wxl", "initView");
+        View view = View.inflate(context, R.layout.html5_view, null);
+        webView = (WebView) view.findViewById(R.id.webView);
         WebSettings mWebSettings = webView.getSettings();
         mWebSettings.setSupportZoom(true);
         mWebSettings.setLoadWithOverviewMode(true);
@@ -36,14 +54,36 @@ public class Html5Activity extends AppCompatActivity {
 
         webView.setWebChromeClient(webChromeClient);
         webView.setWebViewClient(webViewClient);
-        webView.loadUrl("<html>\n" +
-                "   <script language='JavaScript' type='text/javascript'>var iWidth=900;var iHeight=600;var iLeft = (window.screen.availWidth-10-iWidth)/2;var iTop = (window.screen.availHeight-30-iHeight)/2;\tfunction openwin(iWidth,iHeight,iLeft,iTop) {var openWindow = window.open ('', 'newwindow', 'height=' + iHeight + ',width='+iWidth+',top='+iTop+',left='+iLeft+',toolbar =no,menubar=no,titlebar=no,scrollbars=no,resizable=no,location=no,status=no');openWindow.document.write(\"<div id='1470' style='width:900px;height:600px;overflow:hidden;border:solid #333333 1px;background:#999999;display: -webkit-flex;display: flex; -webkit-align-items: center;align-items: center;-webkit-justify-content: center;justify-content: center;'></div>\");openWindow.document.close();}window.onload=function(){openwin(iWidth,iHeight,iLeft,iTop);}</script>\n" +
-                "    <body>\n" +
-                "       ffff\n" +
-                "    </body>\n" +
-                "</html>");
+        //webView.loadUrl("http://lbh.zhangwoo.cn/?m=home&c=index&a=home");
+        addView(view);
     }
 
+    public void loadDataWithBaseURL(String htmlContent) {
+        Log.d("wxl", "loadDataWithBaseURL");
+        //webView.loadUrl("http://lbh.zhangwoo.cn/?m=home&c=index&a=home");
+        //使用简单的loadData方法会导致乱码，可能是Android API的Bug
+        //show.loadData(sb.toString(), "text/html", "utf-8");
+        //加载、并显示HTML代码
+        webView.loadDataWithBaseURL(null, loadHtml("", htmlContent), "text/html", "utf-8", null);
+    }
+
+    public static String loadHtml(String title, String content) {
+        StringBuilder html = new StringBuilder();
+        html.append("<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Transitional//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd\">");
+        html.append("<html xmlns=\"http://www.w3.org/1999/xhtml\">");
+        html.append("<head>");
+        html.append("<meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\" />");
+        html.append("<meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">");
+        html.append("<meta http-equiv=\"Cache-Control\" content=\"no-transform\">");
+        html.append("<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no\">");
+        html.append("<meta name=\"keywords\" content=\"\">");
+        html.append("<title>" + title + "</title>");
+        html.append("<style> img { width: 100%; }</style>");
+        html.append("</head>");
+        html.append("<body>" + content + "</body>");
+        html.append("</html>");
+        return html.toString();
+    }
 
     /**
      * 多窗口的问题
@@ -63,7 +103,7 @@ public class Html5Activity extends AppCompatActivity {
         mWebSettings.setDomStorageEnabled(true);
         mWebSettings.setDatabaseEnabled(true);
         mWebSettings.setAppCacheEnabled(true);
-        String appCachePath = getApplicationContext().getCacheDir().getAbsolutePath();
+        String appCachePath = context.getApplicationContext().getCacheDir().getAbsolutePath();
         mWebSettings.setAppCachePath(appCachePath);
     }
 
@@ -125,23 +165,17 @@ public class Html5Activity extends AppCompatActivity {
         return super.onKeyDown(keyCode, event);
     }
 
-    @Override
     public void onPause() {
-        super.onPause();
         webView.onPause();
         webView.pauseTimers(); //小心这个！！！暂停整个 WebView 所有布局、解析、JS。
     }
 
-    @Override
     public void onResume() {
-        super.onResume();
         webView.onResume();
         webView.resumeTimers();
     }
 
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
+    public void onDestroy() {
 
         if (webView != null) {
             webView.clearHistory();

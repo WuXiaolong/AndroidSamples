@@ -3,10 +3,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.wuxiaolong.androidsamples.Html5Activity">
+    tools:context="com.wuxiaolong.androidsamples.html5.Html5Activity">
 
-    <WebView
-        android:id="@+id/webView"
+    <com.wuxiaolong.androidsamples.html5.Html5View
+        android:id="@+id/html5View"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 </LinearLayout>
