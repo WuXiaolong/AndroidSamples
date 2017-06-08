@@ -5,6 +5,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -20,6 +21,8 @@ import com.wuxiaolong.androidsamples.glide.GlideActivity;
 import com.wuxiaolong.androidsamples.html5.Html5Activity;
 import com.wuxiaolong.androidsamples.itemtouchhelper.ItemTouchHelperActivity;
 import com.wuxiaolong.androidsamples.notification.NotificationActivity;
+import com.wuxiaolong.androidsamples.observer.ObserverActivity;
+import com.wuxiaolong.androidsamples.observer.SimpleObservable;
 import com.wuxiaolong.androidsamples.retrofit.RetrofitActivity;
 import com.wuxiaolong.androidsamples.runtimepermission.RuntimePermissionActivity;
 import com.wuxiaolong.androidsamples.videoplay.VideoPlayViewActivity;
@@ -29,13 +32,16 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
+import java.util.Observable;
+import java.util.Observer;
 
 
-public class MainActivity extends BaseActivity {
+public class MainActivity extends BaseActivity implements Observer {
     private RecyclerView recyclerView;
     private RecyclerViewAdatper recyclerViewAdatper;
     private List<String> textList = new ArrayList<>();
     private List<Class> classList = new ArrayList<>();
+    private SimpleObservable simpleObservable;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,6 +58,24 @@ public class MainActivity extends BaseActivity {
         recyclerView.setLayoutManager(new LinearLayoutManager(context));
 //        Trace.beginSection("beginSection");
 //        Trace.endSection();
+
+        simpleObservable = SimpleObservable.getInstance();
+        simpleObservable.addObserver(this);
+        //simpleObservable.post();
+    }
+
+    @Override
+    public void update(Observable o, Object arg) {
+        Log.d("wxl", "MainActivity");
+        SimpleObservable simpleObservable = (SimpleObservable) o;
+        Log.d("wxl", "data=" + simpleObservable.getData());
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        //删除从一组对象的观察者的观察者
+        simpleObservable.deleteObserver(this);
     }
 
     private void initData() {
@@ -68,8 +92,10 @@ public class MainActivity extends BaseActivity {
         textList.add("ChainOfResponsibility");
         textList.add("DragDrop");
         textList.add("Html5");
+        textList.add("Observer");
 
 
+        classList.add(ObserverActivity.class);
         classList.add(ChainOfResponsibilityActivity.class);
         classList.add(NotificationActivity.class);
         classList.add(ViewDragActivity.class);
@@ -93,6 +119,7 @@ public class MainActivity extends BaseActivity {
         });
 
     }
+
 
     public class RecyclerViewAdatper extends RecyclerView.Adapter<RecyclerViewAdatper.ViewHolder> {
 

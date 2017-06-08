@@ -111,8 +111,9 @@
         <activity android:name=".runtimepermission.RuntimePermissionActivity" />
         <activity android:name=".appmemory.AppMemoryActivity" />
         <activity android:name=".designpatterns.ChainOfResponsibilityActivity" />
-        <activity android:name=".dragdrop.DragDropActivity"></activity>
-        <activity android:name=".html5.Html5Activity"></activity>
+        <activity android:name=".dragdrop.DragDropActivity" />
+        <activity android:name=".html5.Html5Activity" />
+        <activity android:name=".observer.ObserverActivity"></activity>
     </application>
 
 </manifest>
