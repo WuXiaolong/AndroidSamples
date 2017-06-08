@@ -21,8 +21,8 @@ import com.wuxiaolong.androidsamples.glide.GlideActivity;
 import com.wuxiaolong.androidsamples.html5.Html5Activity;
 import com.wuxiaolong.androidsamples.itemtouchhelper.ItemTouchHelperActivity;
 import com.wuxiaolong.androidsamples.notification.NotificationActivity;
+import com.wuxiaolong.androidsamples.observer.ConcreteObservable;
 import com.wuxiaolong.androidsamples.observer.ObserverActivity;
-import com.wuxiaolong.androidsamples.observer.SimpleObservable;
 import com.wuxiaolong.androidsamples.retrofit.RetrofitActivity;
 import com.wuxiaolong.androidsamples.runtimepermission.RuntimePermissionActivity;
 import com.wuxiaolong.androidsamples.videoplay.VideoPlayViewActivity;
@@ -41,7 +41,7 @@ public class MainActivity extends BaseActivity implements Observer {
     private RecyclerViewAdatper recyclerViewAdatper;
     private List<String> textList = new ArrayList<>();
     private List<Class> classList = new ArrayList<>();
-    private SimpleObservable simpleObservable;
+    private ConcreteObservable concreteObservable;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -59,23 +59,23 @@ public class MainActivity extends BaseActivity implements Observer {
 //        Trace.beginSection("beginSection");
 //        Trace.endSection();
 
-        simpleObservable = SimpleObservable.getInstance();
-        simpleObservable.addObserver(this);
-        //simpleObservable.post();
+        concreteObservable = ConcreteObservable.getInstance();
+        //concreteObservable.addObserver(this);
+        //concreteObservable.post();
     }
 
     @Override
     public void update(Observable o, Object arg) {
         Log.d("wxl", "MainActivity");
-        SimpleObservable simpleObservable = (SimpleObservable) o;
-        Log.d("wxl", "data=" + simpleObservable.getData());
+        ConcreteObservable concreteObservable = (ConcreteObservable) o;
+        Log.d("wxl", "data=" + concreteObservable.getData());
     }
 
     @Override
     protected void onDestroy() {
         super.onDestroy();
         //删除从一组对象的观察者的观察者
-        simpleObservable.deleteObserver(this);
+        concreteObservable.deleteObserver(this);
     }
 
     private void initData() {
