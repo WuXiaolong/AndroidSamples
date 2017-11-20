@@ -12,16 +12,19 @@
     <Button
         android:id="@+id/photograph_cutting"
         android:text="@string/photograph_cutting"
+        android:onClick="picPopupItemsOnClick"
         android:layout_width="fill_parent"
         android:layout_height="50dp" />
     <Button
         android:id="@+id/btn_user_album"
         android:text="@string/album"
+        android:onClick="albumOnClick"
         android:layout_width="fill_parent"
         android:layout_height="50dp" />
     <Button
         android:id="@+id/btn_photograph"
         android:text="@string/photograph"
+        android:onClick="albumOnClick"
         android:layout_width="fill_parent"
         android:layout_height="50dp" />
 

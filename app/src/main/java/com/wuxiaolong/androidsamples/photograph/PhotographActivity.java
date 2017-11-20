@@ -22,26 +22,21 @@ import com.wuxiaolong.androidsamples.utils.AppConfig;
 
 import java.io.File;
 
-import butterknife.ButterKnife;
-import butterknife.InjectView;
-import butterknife.OnClick;
 
 public class PhotographActivity extends BaseActivity {
-    @InjectView(R.id.imageViewShow)
     ImageView imageViewShow;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_photograph);
-        ButterKnife.inject(this);
+        imageViewShow = (ImageView) findViewById(R.id.imageViewShow);
     }
 
     /**
      * 相册取照片
      */
-    @OnClick(R.id.btn_user_album)
-    void albumOnClick() {
+    public void albumOnClick(View v) {
         try {
             // 选择照片的时候也一样，我们用Action为Intent.ACTION_GET_CONTENT，
             // 有些人使用其他的Action但我发现在有些机子中会出问题，所以优先选择这个
@@ -59,8 +54,8 @@ public class PhotographActivity extends BaseActivity {
      * 拍照
      */
     private String capturePath = null;
-    @OnClick(R.id.btn_photograph)
-    void photographOnClick() {
+
+    public void photographOnClick(View v) {
         String state = Environment.getExternalStorageState();
         if (state.equals(Environment.MEDIA_MOUNTED)) {
             Intent getImageByCamera = new Intent(
@@ -84,8 +79,7 @@ public class PhotographActivity extends BaseActivity {
         }
     }
 
-    @OnClick(R.id.photograph_cutting)
-    void picPopupItemsOnClick() {
+    public void picPopupItemsOnClick(View v) {
         // 实例化SelectPicPopupWindow
         picPopupWindow = new com.wuxiaolong.androidsamples.photograph.PicPopupWindow(PhotographActivity.this,
                 picPopupItemsOnClick);
