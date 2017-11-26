@@ -18,16 +18,11 @@ import com.wuxiaolong.androidsamples.R;
 
 import java.util.Random;
 
-import butterknife.ButterKnife;
-import butterknife.InjectView;
 
 public class DownloadActivity extends DownloadBaseActivity implements View.OnClickListener {
 
-    @InjectView(R.id.btn_download_start)
     Button btn_download_start;
-    @InjectView(R.id.btn_download_pause)
     Button btn_download_pause;
-    @InjectView(R.id.btn_download_cancel)
     Button btn_download_cancel;
     /**
      * Notification的ID
@@ -56,7 +51,9 @@ public class DownloadActivity extends DownloadBaseActivity implements View.OnCli
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_download);
-        ButterKnife.inject(this);
+        btn_download_start= (Button) findViewById(R.id.btn_download_start);
+        btn_download_pause= (Button) findViewById(R.id.btn_download_pause);
+        btn_download_cancel= (Button) findViewById(R.id.btn_download_cancel);
 //        actionBar.setTitle("下载");
         initView();
         initNotify(true);
