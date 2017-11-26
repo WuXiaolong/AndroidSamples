@@ -43,7 +43,7 @@ public class RetrofitActivity extends BaseActivity {
             public void onResponse(Call<WeatherJson> call, Response<WeatherJson> response) {
                 Log.i("wxl", "getCity=" + response.body().getWeatherinfo().getCity());
                 Toast.makeText(context, response.body().getWeatherinfo().getCity(), Toast.LENGTH_LONG).show();
-                RetrofitActivity.this.reportFullyDrawn();
+//                RetrofitActivity.this.reportFullyDrawn();
             }
 
             @Override

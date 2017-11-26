@@ -3,11 +3,11 @@ apply plugin: 'me.tatarka.retrolambda'
 def supportLibraryVersion = "25.3.1"
 android {
     compileSdkVersion 25
-    buildToolsVersion "25.0.3"
+    buildToolsVersion "26.0.0"
 
     defaultConfig {
         applicationId "com.wuxiaolong.androidsamples"
-        minSdkVersion 21
+        minSdkVersion 15
         targetSdkVersion 25
         versionCode 1
         versionName "1.0"
@@ -36,6 +36,17 @@ android {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
+    //aidl可能提示找不到对应的Book.java文件
+    sourceSets {
+        main {
+            manifest.srcFile 'src/main/AndroidManifest.xml'
+            java.srcDirs = ['src/main/java', 'src/main/aidl']
+            resources.srcDirs = ['src/main/java', 'src/main/aidl']
+            aidl.srcDirs = ['src/main/aidl']
+            res.srcDirs = ['src/main/res']
+            assets.srcDirs = ['src/main/assets']
+        }
+    }
 }
 repositories {
     flatDir {
@@ -63,4 +74,5 @@ dependencies {
     compile 'com.jakewharton:disklrucache:2.0.2'
     compile 'com.wuxiaolong.androidutils:androidutils:1.0.6'
     compile 'pub.devrel:easypermissions:0.3.0'
+    compile 'com.folioreader:folioreader:0.2.5'
 }

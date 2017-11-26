@@ -11,6 +11,9 @@ import android.widget.RelativeLayout;
 import com.wuxiaolong.androidsamples.BaseActivity;
 import com.wuxiaolong.androidsamples.R;
 
+/**
+ * https://developer.android.com/guide/topics/ui/drag-drop.html?hl=zh-cn
+ */
 public class DragDropActivity extends BaseActivity {
 
     @Override
@@ -23,7 +26,7 @@ public class DragDropActivity extends BaseActivity {
                 // 设置数据,会被拖动目标ViewGroup所接收,即用来传递信息
                 ClipData data = ClipData.newPlainText("", "");
 
-                // 设置拖动阴影,即你所拖动view(这也同时说明,你拖动的不过是一个影分身,本尊其实并没有移动)
+                // 设置拖拽阴影,即你所拖动view(这也同时说明,你拖动的不过是一个影分身,本尊其实并没有移动)
                 View.DragShadowBuilder shadowBuilder = new View.DragShadowBuilder(view);
                 view.startDrag(data, shadowBuilder, view, 0);
                 
@@ -35,11 +38,14 @@ public class DragDropActivity extends BaseActivity {
             public boolean onDrag(View v, DragEvent event) {
                 switch (event.getAction()) {
                     case DragEvent.ACTION_DRAG_STARTED:
-                        // Do nothing
+                        // Do nothing，调用 startDrag() 并获得拖拽阴影之后立即收到
                         break;
                     case DragEvent.ACTION_DRAG_ENTERED:
-                        //拖进拖放区
+                        //刚刚拖进拖放区
                         v.setBackgroundColor(ActivityCompat.getColor(DragDropActivity.this,R.color.colorPrimary));
+                        break;
+                    case DragEvent.ACTION_DRAG_LOCATION:
+                        //拖拽事件侦听器收到 ACTION_DRAG_ENTERED 事件之后以及收到 ACTION_DRAG_EXITED 事件之前
                         break;
                     case DragEvent.ACTION_DRAG_EXITED:
                         //拖出拖放区

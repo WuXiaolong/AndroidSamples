@@ -13,7 +13,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.wuxiaolong.androidsamples.aidl.AIDLActivity;
 import com.wuxiaolong.androidsamples.appmemory.AppMemoryActivity;
+import com.wuxiaolong.androidsamples.constraintlayout.ConstraintLayoutActivity;
 import com.wuxiaolong.androidsamples.customview.EmptyViewActivity;
 import com.wuxiaolong.androidsamples.designpatterns.ChainOfResponsibilityActivity;
 import com.wuxiaolong.androidsamples.dragdrop.DragDropActivity;
@@ -21,8 +23,10 @@ import com.wuxiaolong.androidsamples.glide.GlideActivity;
 import com.wuxiaolong.androidsamples.html5.Html5Activity;
 import com.wuxiaolong.androidsamples.itemtouchhelper.ItemTouchHelperActivity;
 import com.wuxiaolong.androidsamples.notification.NotificationActivity;
+import com.wuxiaolong.androidsamples.objecttosdcard.ObjectToSDCardActivity;
 import com.wuxiaolong.androidsamples.observer.ConcreteObservable;
 import com.wuxiaolong.androidsamples.observer.ObserverActivity;
+import com.wuxiaolong.androidsamples.recyclerViewcheckBox.RecyclerViewCheckBoxActivity;
 import com.wuxiaolong.androidsamples.retrofit.RetrofitActivity;
 import com.wuxiaolong.androidsamples.runtimepermission.RuntimePermissionActivity;
 import com.wuxiaolong.androidsamples.videoplay.VideoPlayViewActivity;
@@ -34,7 +38,10 @@ import java.util.Comparator;
 import java.util.List;
 import java.util.Observable;
 import java.util.Observer;
-
+/**
+ * Created by WuXiaolong on 2017/7/17.
+ * 个人博客：http：//wuxiaolong.me
+ */
 
 public class MainActivity extends BaseActivity implements Observer {
     private RecyclerView recyclerView;
@@ -47,6 +54,7 @@ public class MainActivity extends BaseActivity implements Observer {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setTheme(R.style.AppTheme);
+
         setContentView(R.layout.activity_main);
         //设置是否滑动退出
         setSwipeBackEnable(false);
@@ -93,9 +101,17 @@ public class MainActivity extends BaseActivity implements Observer {
         textList.add("DragDrop");
         textList.add("Html5");
         textList.add("Observer");
+        textList.add("ObjectToSDCard");
+        textList.add("EPub");
+        textList.add("AIDL");
+        textList.add("ConstraintLayout");
+        textList.add("RecyclerView CheckBox");
 
-
+        classList.add(RecyclerViewCheckBoxActivity.class);
+        classList.add(ConstraintLayoutActivity.class);
+        classList.add(AIDLActivity.class);
         classList.add(ObserverActivity.class);
+        classList.add(EPubActivity.class);
         classList.add(ChainOfResponsibilityActivity.class);
         classList.add(NotificationActivity.class);
         classList.add(ViewDragActivity.class);
@@ -108,6 +124,7 @@ public class MainActivity extends BaseActivity implements Observer {
         classList.add(GlideActivity.class);
         classList.add(DragDropActivity.class);
         classList.add(Html5Activity.class);
+        classList.add(ObjectToSDCardActivity.class);
 
         Collections.sort(textList);
 
