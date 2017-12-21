@@ -1,4 +1,4 @@
-package com.wuxiaolong.androidsamples;
+package com.wuxiaolong.androidsamples.utils;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;

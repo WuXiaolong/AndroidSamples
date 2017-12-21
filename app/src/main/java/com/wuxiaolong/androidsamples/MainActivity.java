@@ -13,7 +13,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import com.wuxiaolong.androidsamples.aidl.AIDLActivity;
 import com.wuxiaolong.androidsamples.appmemory.AppMemoryActivity;
 import com.wuxiaolong.androidsamples.constraintlayout.ConstraintLayoutActivity;
 import com.wuxiaolong.androidsamples.customview.EmptyViewActivity;
@@ -103,13 +102,11 @@ public class MainActivity extends BaseActivity implements Observer {
         textList.add("Observer");
         textList.add("ObjectToSDCard");
         textList.add("EPub");
-        textList.add("AIDL");
         textList.add("ConstraintLayout");
         textList.add("RecyclerView CheckBox");
 
         classList.add(RecyclerViewCheckBoxActivity.class);
         classList.add(ConstraintLayoutActivity.class);
-        classList.add(AIDLActivity.class);
         classList.add(ObserverActivity.class);
         classList.add(EPubActivity.class);
         classList.add(ChainOfResponsibilityActivity.class);

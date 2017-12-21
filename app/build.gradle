@@ -37,17 +37,6 @@ android {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
-    //aidl可能提示找不到对应的Book.java文件
-    sourceSets {
-        main {
-            manifest.srcFile 'src/main/AndroidManifest.xml'
-            java.srcDirs = ['src/main/java', 'src/main/aidl']
-            resources.srcDirs = ['src/main/java', 'src/main/aidl']
-            aidl.srcDirs = ['src/main/aidl']
-            res.srcDirs = ['src/main/res']
-            assets.srcDirs = ['src/main/assets']
-        }
-    }
 }
 repositories {
     flatDir {
